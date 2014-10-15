@@ -1,3 +1,50 @@
-CPSC320 Lecture and Study Notes
+CPSC 320 Lecture and Study Notes
 ===============================
 
+
+Oct 15, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^
+
+#Project discussion:
+
+* Write a paper on a concrete language with analysis of all the aspects discussed in the course.
+* Will need to do research, start with wikipedia and use the links and references.
+* Language must have a free downloadable translator.
+* Do not choose Java or other languages that you have been formally taught. 
+* Preferably not a main stream language where there is so much material ones opinion can be distorted.
+* Stay away from a language where the purpose is too narrow (ie Latex)
+* Language report, not a tutorial, roughly 10 pages focusing on highlights, what is important/interesting.
+* Make sure to cite quotes from other sources.
+
+    - Prolog, 
+    - Angular.js (javascript), 
+    - jQuery...
+
+
+#Lecture:
+
+* Expressions: 
+    - side effects in expressions are where they modify a memory location
+    - order in which functions are evoked matter, z = f(x) + g(x) or z = f(x) && g(x).
+    - 
+
+C: (sidebar?) What does this loop do?
+
+unsigned char *p, *q;
+while (*p++=*q++); *p is the location that the pointer p points to.
+
+    p = x, *p is the memory location of x
+    q = y, *q is the memory location of y
+    so the contents of q is stored at the location *p. Then incremented. 
+    This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.
+---------------------------------
+* Definitions: 
+    - 
+---------------------------------
+* Commands:
+    - Construct that modifies the state of computation
+    - Could do I/O
+    - Cannot under actions on commands
+    - irreversible effects.
+---------------------------------
+* Sequencers:

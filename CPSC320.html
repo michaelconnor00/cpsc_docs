@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CPSC320 Lecture and Study Notes &mdash; cpsc 0.0.1 documentation</title>
+    <title>CPSC 320 Lecture and Study Notes &mdash; cpsc 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="cpsc 0.0.1 documentation" href="index.html" /> 
+    <link rel="top" title="cpsc 0.0.1 documentation" href="index.html" />
+    <link rel="next" title="CPSC 475 Lecture and Study Notes" href="CPSC475.html" />
+    <link rel="prev" title="CPSC 321 Lecture and Study Notes" href="CPSC321.html" /> 
   </head>
   <body>
     <div class="related">
@@ -32,6 +34,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="CPSC475.html" title="CPSC 475 Lecture and Study Notes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="CPSC321.html" title="CPSC 321 Lecture and Study Notes"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">cpsc 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -41,8 +49,65 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="cpsc320-lecture-and-study-notes">
-<h1>CPSC320 Lecture and Study Notes<a class="headerlink" href="#cpsc320-lecture-and-study-notes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cpsc-320-lecture-and-study-notes">
+<h1>CPSC 320 Lecture and Study Notes<a class="headerlink" href="#cpsc-320-lecture-and-study-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="oct-15-2014-lecture">
+<h2>Oct 15, 2014 Lecture<a class="headerlink" href="#oct-15-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p>#Project discussion:</p>
+<ul>
+<li><p class="first">Write a paper on a concrete language with analysis of all the aspects discussed in the course.</p>
+</li>
+<li><p class="first">Will need to do research, start with wikipedia and use the links and references.</p>
+</li>
+<li><p class="first">Language must have a free downloadable translator.</p>
+</li>
+<li><p class="first">Do not choose Java or other languages that you have been formally taught.</p>
+</li>
+<li><p class="first">Preferably not a main stream language where there is so much material ones opinion can be distorted.</p>
+</li>
+<li><p class="first">Stay away from a language where the purpose is too narrow (ie Latex)</p>
+</li>
+<li><p class="first">Language report, not a tutorial, roughly 10 pages focusing on highlights, what is important/interesting.</p>
+</li>
+<li><p class="first">Make sure to cite quotes from other sources.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Prolog,</li>
+<li>Angular.js (javascript),</li>
+<li>jQuery...</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>#Lecture:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Expressions:</dt>
+<dd><ul class="first last simple">
+<li>side effects in expressions are where they modify a memory location</li>
+<li>order in which functions are evoked matter, z = f(x) + g(x) or z = f(x) &amp;&amp; g(x).</li>
+<li></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>C: (sidebar?) What does this loop do?</p>
+<p>unsigned char <a href="#id1"><span class="problematic" id="id2">*</span></a>p, <a href="#id3"><span class="problematic" id="id4">*</span></a>q;
+while (<a href="#id5"><span class="problematic" id="id6">*</span></a>p++=*q++); <a href="#id7"><span class="problematic" id="id8">*</span></a>p is the location that the pointer p points to.</p>
+<blockquote>
+<div>p = x, <a href="#id9"><span class="problematic" id="id10">*</span></a>p is the memory location of x
+q = y, <a href="#id11"><span class="problematic" id="id12">*</span></a>q is the memory location of y
+so the contents of q is stored at the location <a href="#id13"><span class="problematic" id="id14">*</span></a>p. Then incremented.
+This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li>Could do I/O</li>
+<li>Cannot under actions on commands</li>
+<li>irreversible effects.</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -51,6 +116,20 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CPSC 320 Lecture and Study Notes</a><ul>
+<li><a class="reference internal" href="#oct-15-2014-lecture">Oct 15, 2014 Lecture</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="CPSC321.html"
+                        title="previous chapter">CPSC 321 Lecture and Study Notes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="CPSC475.html"
+                        title="next chapter">CPSC 475 Lecture and Study Notes</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/CPSC320.txt"
@@ -79,6 +158,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="CPSC475.html" title="CPSC 475 Lecture and Study Notes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="CPSC321.html" title="CPSC 321 Lecture and Study Notes"
+             >previous</a> |</li>
         <li><a href="index.html">cpsc 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
