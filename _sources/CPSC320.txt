@@ -1,11 +1,13 @@
+================================
 CPSC 320 Lecture and Study Notes
-===============================
+================================
 
 
 Oct 15, 2014 Lecture
 ^^^^^^^^^^^^^^^^^^^^^
 
-#Project discussion:
+Project discussion:
+-------------------
 
 * Write a paper on a concrete language with analysis of all the aspects discussed in the course.
 * Will need to do research, start with wikipedia and use the links and references.
@@ -21,30 +23,57 @@ Oct 15, 2014 Lecture
     - jQuery...
 
 
-#Lecture:
+Lecture:
+---------
 
-* Expressions: 
+* **Expressions**: 
     - side effects in expressions are where they modify a memory location
     - order in which functions are evoked matter, z = f(x) + g(x) or z = f(x) && g(x).
     - 
 
 C: (sidebar?) What does this loop do?
+.. highlight:: c
+::
+    unsigned char *p, *q;
+    while (*p++=*q++); //*p is the location that the pointer p points to.
 
-unsigned char *p, *q;
-while (*p++=*q++); *p is the location that the pointer p points to.
+    //p = x, *p is the memory location of x
+    //q = y, *q is the memory location of y
+    //so the contents of q is stored at the location *p. Then incremented. 
+    //This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.
 
-    p = x, *p is the memory location of x
-    q = y, *q is the memory location of y
-    so the contents of q is stored at the location *p. Then incremented. 
-    This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.
 ---------------------------------
-* Definitions: 
-    - 
+
+* **Definitions**: 
+    - int x
+    - assigns meaning to a name
+
 ---------------------------------
-* Commands:
+
+* **Commands**:
     - Construct that modifies the state of computation
     - Could do I/O
     - Cannot under actions on commands
     - irreversible effects.
+
 ---------------------------------
-* Sequencers:
+
+* **Sequencers**:
+
+
+Example:
+.. highlight:: c
+::
+
+    x = x +1
+- left part is an expression that points to a box where the new value will be placed. Called L-value.
+- right part is also an expression (variables). Called R-value
+    - however, x on the right is the value of the box 
+
+An L-expression is a reference to a memory location
+
+int x = 2+3;
+- Definition: a storage location that is bound to the variable x (int x). not a pure definition because it effects storage (reserves space)
+- Expression: 2+3 is put in the storage location(x=2+3)
+
+

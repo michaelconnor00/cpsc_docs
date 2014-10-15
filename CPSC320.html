@@ -53,7 +53,8 @@
 <h1>CPSC 320 Lecture and Study Notes<a class="headerlink" href="#cpsc-320-lecture-and-study-notes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="oct-15-2014-lecture">
 <h2>Oct 15, 2014 Lecture<a class="headerlink" href="#oct-15-2014-lecture" title="Permalink to this headline">¶</a></h2>
-<p>#Project discussion:</p>
+<div class="section" id="project-discussion">
+<h3>Project discussion:<a class="headerlink" href="#project-discussion" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p class="first">Write a paper on a concrete language with analysis of all the aspects discussed in the course.</p>
 </li>
@@ -79,10 +80,12 @@
 </div></blockquote>
 </li>
 </ul>
-<p>#Lecture:</p>
+</div>
+<div class="section" id="lecture">
+<h3>Lecture:<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
-<dt>Expressions:</dt>
+<dt><strong>Expressions</strong>:</dt>
 <dd><ul class="first last simple">
 <li>side effects in expressions are where they modify a memory location</li>
 <li>order in which functions are evoked matter, z = f(x) + g(x) or z = f(x) &amp;&amp; g(x).</li>
@@ -92,21 +95,69 @@
 </dl>
 </li>
 </ul>
-<p>C: (sidebar?) What does this loop do?</p>
-<p>unsigned char <a href="#id1"><span class="problematic" id="id2">*</span></a>p, <a href="#id3"><span class="problematic" id="id4">*</span></a>q;
-while (<a href="#id5"><span class="problematic" id="id6">*</span></a>p++=*q++); <a href="#id7"><span class="problematic" id="id8">*</span></a>p is the location that the pointer p points to.</p>
-<blockquote>
-<div>p = x, <a href="#id9"><span class="problematic" id="id10">*</span></a>p is the memory location of x
-q = y, <a href="#id11"><span class="problematic" id="id12">*</span></a>q is the memory location of y
-so the contents of q is stored at the location <a href="#id13"><span class="problematic" id="id14">*</span></a>p. Then incremented.
-This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.</div></blockquote>
-<blockquote>
-<div><ul class="simple">
+<p>C: (sidebar?) What does this loop do?
+.. highlight:: c</p>
+<div class="highlight-python"><div class="highlight"><pre>unsigned char *p, *q;
+while (*p++=*q++); //*p is the location that the pointer p points to.
+
+//p = x, *p is the memory location of x
+//q = y, *q is the memory location of y
+//so the contents of q is stored at the location *p. Then incremented.
+//This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul>
+<li><dl class="first docutils">
+<dt><strong>Definitions</strong>:</dt>
+<dd><ul class="first last simple">
+<li>int x</li>
+<li>assigns meaning to a name</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><dl class="first docutils">
+<dt><strong>Commands</strong>:</dt>
+<dd><ul class="first last simple">
+<li>Construct that modifies the state of computation</li>
 <li>Could do I/O</li>
 <li>Cannot under actions on commands</li>
 <li>irreversible effects.</li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><strong>Sequencers</strong>:</li>
+</ul>
+<p>Example:
+.. highlight:: c</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">left part is an expression that points to a box where the new value will be placed. Called L-value.</p>
+</li>
+<li><dl class="first docutils">
+<dt>right part is also an expression (variables). Called R-value</dt>
+<dd><ul class="first last simple">
+<li>however, x on the right is the value of the box</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>An L-expression is a reference to a memory location</p>
+<p>int x = 2+3;
+- Definition: a storage location that is bound to the variable x (int x). not a pure definition because it effects storage (reserves space)
+- Expression: 2+3 is put in the storage location(x=2+3)</p>
+</div>
 </div>
 </div>
 
@@ -119,7 +170,11 @@ This loop essentially copies one string to another location. terminates when it 
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">CPSC 320 Lecture and Study Notes</a><ul>
-<li><a class="reference internal" href="#oct-15-2014-lecture">Oct 15, 2014 Lecture</a></li>
+<li><a class="reference internal" href="#oct-15-2014-lecture">Oct 15, 2014 Lecture</a><ul>
+<li><a class="reference internal" href="#project-discussion">Project discussion:</a></li>
+<li><a class="reference internal" href="#lecture">Lecture:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
