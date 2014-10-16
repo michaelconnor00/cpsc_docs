@@ -116,7 +116,6 @@ The HW has functionality…</p>
 </ul>
 </dd>
 </dl>
-<p>———————————————————————</p>
 <div class="section" id="computer-system">
 <h3>Computer System<a class="headerlink" href="#computer-system" title="Permalink to this headline">¶</a></h3>
 <blockquote>
@@ -150,7 +149,6 @@ The HW has functionality…</p>
 </ul>
 </div></blockquote>
 </div>
-<hr class="docutils" />
 <div class="section" id="evolution-of-os">
 <h3>Evolution of OS<a class="headerlink" href="#evolution-of-os" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
@@ -244,19 +242,18 @@ Filesystem Management</dd>
 </ul>
 </dd>
 </dl>
-<p>The organization of the filesystem is a tree structure:
-.. highlight:: c</p>
-<div class="highlight-python"><div class="highlight"><pre>----/
---------usr (these are called directories)
-------------folder1
-------------folder2
-----------------file1
---------bin
-------------folder1
-----------------file1
-----------------file2
-----------------folder11
---------------------file11
+<p>The organization of the filesystem is a tree structure:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="o">----/</span>
+<span class="o">--------</span><span class="n">usr</span> <span class="p">(</span><span class="n">these</span> <span class="n">are</span> <span class="n">called</span> <span class="n">directories</span><span class="p">)</span>
+<span class="o">------------</span><span class="n">folder1</span>
+<span class="o">------------</span><span class="n">folder2</span>
+<span class="o">----------------</span><span class="n">file1</span>
+<span class="o">--------</span><span class="n">bin</span>
+<span class="o">------------</span><span class="n">folder1</span>
+<span class="o">----------------</span><span class="n">file1</span>
+<span class="o">----------------</span><span class="n">file2</span>
+<span class="o">----------------</span><span class="n">folder11</span>
+<span class="o">--------------------</span><span class="n">file11</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -266,12 +263,11 @@ Filesystem Management</dd>
 </ul>
 </dd>
 </dl>
-<dl class="docutils">
-<dt>::</dt>
-<dd>——init
+<div class="highlight-c"><div class="highlight"><pre>——init
 ————parent process
-————————child process</dd>
-</dl>
+————————child process
+</pre></div>
+</div>
 <p>Who creates the processes? The OS
 Who supplies the program? The User</p>
 <dl class="docutils">
@@ -452,11 +448,11 @@ q=infinity, no responsivness, FIFO
 Tannenbaum agrues: c:q ~20%:80%</p>
 <p>Large q, slower response, higher utilization, low overhead
 Small q, fast response, low utilization, high overhead.</p>
-<p>Round robin: The scheduler assigns a fixed time unit per process, and cycles through them.
-CPU: -&gt;p1-&gt;p2-&gt;p3-&gt;...-&gt;(return to start)
-Need a mechanism to keep track of the quanta usage and get control after the quanta expires.</p>
-<blockquote>
-<div><ul>
+<p>Round robin: The scheduler assigns a fixed time unit per process, and cycles through them.</p>
+<p>CPU: -&gt;p1-&gt;p2-&gt;p3-&gt;...-&gt;(return to start)</p>
+<dl class="docutils">
+<dt>Need a mechanism to keep track of the quanta usage and get control after the quanta expires.</dt>
+<dd><ul class="first last">
 <li><dl class="first docutils">
 <dt>Magic box:</dt>
 <dd><ul class="first last simple">
@@ -468,9 +464,9 @@ Need a mechanism to keep track of the quanta usage and get control after the qua
 </dl>
 </li>
 </ul>
-</div></blockquote>
-<p>Processe:
-.. highlight:: c</p>
+</dd>
+</dl>
+<p>Processe:</p>
 <div class="highlight-c"><div class="highlight"><pre><span class="n">While</span> <span class="p">()</span> <span class="p">{</span>
      <span class="n">copy</span> <span class="n">from</span> <span class="n">holder</span> <span class="k">register</span>
      <span class="n">decrement</span> <span class="n">counter</span> <span class="n">at</span> <span class="n">every</span> <span class="n">clock</span> <span class="n">pulse</span>

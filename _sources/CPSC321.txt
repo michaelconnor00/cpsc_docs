@@ -50,7 +50,7 @@ The HW has functionality…
      - operation (what to do)
      - data/operands (on what) - Contents/address
 
-———————————————————————
+
 
 Computer System
 ++++++++++++++++
@@ -63,7 +63,7 @@ Computer System
                - Manage HW
                - Help with Application development - compiler, editor, linker...
 
-----------------------------
+
 
 Evolution of OS
 ++++++++++++++++
@@ -129,8 +129,9 @@ With these abstractions, OS = managing files and processes
     - reliable
 
 The organization of the filesystem is a tree structure:
-.. highlight:: c
-::
+
+.. code-block:: c
+
     ----/
     --------usr (these are called directories)
     ------------folder1
@@ -146,8 +147,9 @@ The organization of the filesystem is a tree structure:
 
 **Process management**
      - Can we use the same tree structure organization?
-.. highlight:: c
-::
+
+.. code-block:: c
+
     ——init
     ————parent process
     ————————child process
@@ -271,7 +273,9 @@ Large q, slower response, higher utilization, low overhead
 Small q, fast response, low utilization, high overhead.
 
 Round robin: The scheduler assigns a fixed time unit per process, and cycles through them.
+
 CPU: ->p1->p2->p3->...->(return to start)
+
 Need a mechanism to keep track of the quanta usage and get control after the quanta expires.
      - Magic box:
           - counter register (get control back)
@@ -279,8 +283,9 @@ Need a mechanism to keep track of the quanta usage and get control after the qua
           - clock pulse
 
 Processe:
-.. highlight:: c
-::
+
+.. code-block:: c
+
     While () {
          copy from holder register
          decrement counter at every clock pulse
