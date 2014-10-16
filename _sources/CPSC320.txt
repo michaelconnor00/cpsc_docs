@@ -64,8 +64,8 @@ C: (sidebar?) What does this loop do?
 Example:
 .. highlight:: c
 ::
-
     x = x +1
+    
 - left part is an expression that points to a box where the new value will be placed. Called L-value.
 - right part is also an expression (variables). Called R-value
     - however, x on the right is the value of the box 

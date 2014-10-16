@@ -244,20 +244,22 @@ Filesystem Management</dd>
 </ul>
 </dd>
 </dl>
-<p>The organization of the filesystem is a tree structure:</p>
+<p>The organization of the filesystem is a tree structure:
+.. highlight:: c</p>
+<div class="highlight-python"><div class="highlight"><pre>----/
+--------usr (these are called directories)
+------------folder1
+------------folder2
+----------------file1
+--------bin
+------------folder1
+----------------file1
+----------------file2
+----------------folder11
+--------------------file11
+</pre></div>
+</div>
 <dl class="docutils">
-<dt>::</dt>
-<dd>&#8212;-/
-&#8212;&#8212;&#8211;usr (these are called directories)
-&#8212;&#8212;&#8212;&#8212;folder1
-&#8212;&#8212;&#8212;&#8212;folder2
-&#8212;&#8212;&#8212;&#8212;&#8212;-file1
-&#8212;&#8212;&#8211;bin
-&#8212;&#8212;&#8212;&#8212;folder1
-&#8212;&#8212;&#8212;&#8212;&#8212;-file1
-&#8212;&#8212;&#8212;&#8212;&#8212;-file2
-&#8212;&#8212;&#8212;&#8212;&#8212;-folder11
-&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;file11</dd>
 <dt><strong>Process management</strong></dt>
 <dd><ul class="first last simple">
 <li>Can we use the same tree structure organization?</li>
@@ -467,18 +469,15 @@ Need a mechanism to keep track of the quanta usage and get control after the qua
 </li>
 </ul>
 </div></blockquote>
-<p>Processe:</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><dl class="first docutils">
-<dt>While () {</dt>
-<dd>copy from holder register
-decrement counter at every clock pulse
-interrupt when at zero</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
+<p>Processe:
+.. highlight:: c</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">While</span> <span class="p">()</span> <span class="p">{</span>
+     <span class="n">copy</span> <span class="n">from</span> <span class="n">holder</span> <span class="k">register</span>
+     <span class="n">decrement</span> <span class="n">counter</span> <span class="n">at</span> <span class="n">every</span> <span class="n">clock</span> <span class="n">pulse</span>
+     <span class="n">interrupt</span> <span class="n">when</span> <span class="n">at</span> <span class="n">zero</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li>Save the context, give control to the scheduler. Done but the interrupt handler.</li>
 </ul>

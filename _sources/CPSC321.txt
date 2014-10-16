@@ -129,7 +129,7 @@ With these abstractions, OS = managing files and processes
     - reliable
 
 The organization of the filesystem is a tree structure:
-
+.. highlight:: c
 ::
     ----/
     --------usr (these are called directories)
@@ -146,7 +146,7 @@ The organization of the filesystem is a tree structure:
 
 **Process management**
      - Can we use the same tree structure organization?
-
+.. highlight:: c
 ::
     ——init
     ————parent process
@@ -279,7 +279,7 @@ Need a mechanism to keep track of the quanta usage and get control after the qua
           - clock pulse
 
 Processe:
-
+.. highlight:: c
 ::
     While () {
          copy from holder register
