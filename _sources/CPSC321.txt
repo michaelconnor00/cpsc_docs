@@ -1,3 +1,333 @@
+================================
 CPSC 321 Lecture and Study Notes
-===============================
+================================
+
+Sep, 11, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^^
+
+The OS has external needs...
+The HW has functionality…
+
+**Basic Structure of a computer:**
+     1 - CPU
+     2 - Memory
+     4 - Bus
+     3 - Disk (storage)
+     3 - input 
+     3 - output
+
+**How does it function? work?**
+     * We need instructions to execute. From where?
+     * Main memory is dynamic and is considered “blank”
+     * There is a read only memory that has the startup instructions
+     * These instructions will instruct the CPU what to do next, i.e. - load more instructions to memory for disk.
+     * The operating system gets loaded first and it will take control of the system before any other programs run.
+     * The operating system (kernel) stays in memory during operation
+     * Bootstrapping is the technique used for 
+
+**CPU executes the instructions in RAM:**
+     * The program counter register holds the instruction to be executed next. (The Most Important Register)
+     * Types of instructions:
+          - Arithmetic - Add, Sub, ...
+          - Logical: =, >, <, ...
+          - Data Movement - Load, Store, Move,...
+          - Flow Control - Jump Cond, Jump Un-Cond
+     * In order to not execute the next instruction, the PC has to be overwritten (by the program instruction). This can make the program more complex. It is a trade-off over program complexity and performance. 90% of the time, the next instruction to be executed. So it this isn’t a big problem.
+     
+**Important Registers:**
+     - PC!
+     - Instruction register - To hold the instruction it self.
+     - Memory address register - address of instruction to be loaded or stored
+     - Memory data register- instruction to be loaded to IR
+     - Stack pointer - “top" of the stack (Most important for program execution)
+     - Base register - “bottom” of the stack
+
+**Why Stack?**
+     - a convient means of storage for executing programs
+     - current executions push current variables to the stack, on completion it is emptied and the previous program execution is right under it. Or the original program could branch to a new program execution. 
+     
+**Components of an instruction**
+     - operation (what to do)
+     - data/operands (on what) - Contents/address
+
+———————————————————————
+
+Computer System
+++++++++++++++++
+
+     - Hardware (see above)
+     - Software (Note the separation between these is not definitive)
+          - Applications
+               - Real World Problems
+          - System Software
+               - Manage HW
+               - Help with Application development - compiler, editor, linker...
+
+----------------------------
+
+Evolution of OS
+++++++++++++++++
+
+Batch
+     Early: (sequential)
+          Card reader translated to tape
+          Computer read from tape
+          Wrote to output tape
+          output tape to printer
+
+This is slow. The CPU is 97% idle. Therefore the next progression was to get the CPU to execute a different program while it is waiting. For this to work, a shared and managed memory is required, This is where the OS came from. 
+
+**MultiPrograms**
+     Memory Management:
+          - protection
+          - sharing/swapping
+     Scheduling
+          - which program to run next
+
+**Interactions**
+     - Need responsiveness for the user to interact
+     - The OS should control the CPU more closely
+     - Pre-emption (SP), OS needs to take control of the CPU when every it needs it (incl during execution).
+     - This is where the interrupts come in. 
+     - Interrupt is a signal seeking attention from the CPU. 
+     - sources of interrupts: (by interrupt handler routine of OS)
+          - I/O
+          - Clock
+
+**Filesystem**
+
+**Main topics of OS:**
+     Memory Management
+     Process Management
+     Filesystem Management
+
+
+Sep 18th, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Missed due to Flu...
+
+
+Sep 25th, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^^
+
+**Two main abstractions are identified and used extensively in most modern operating systems.**
+
+    - Files (storage unit)
+    - Process(es) (execution unit)
+
+This follows the UNIX philosophy.
+
+With these abstractions, OS = managing files and processes
+     - files being: file control block, and file description?
+     - process control block, and process descriptor
+
+**Filesystem management**
+    - basic operations: create, copy, move, delete
+    - production and security
+    - distribution of files
+    - reliable
+
+The organization of the filesystem is a tree structure:
+
+::
+    ----/
+    --------usr (these are called directories)
+    ------------folder1
+    ------------folder2
+    ----------------file1
+    --------bin
+    ------------folder1
+    ----------------file1
+    ----------------file2
+    ----------------folder11
+    --------------------file11
+
+
+**Process management**
+     - Can we use the same tree structure organization?
+
+::
+    ——init
+    ————parent process
+    ————————child process
+
+Who creates the processes? The OS
+Who supplies the program? The User
+
+Three steps in process creation:
+    - create system resources
+    - include user supplied program
+    - make it ready to go
+
+Two system calls for processes:
+    - fork() - create an identical thread(process) 
+    - exec() - use fork, then exec to create a new process (overwrites the code)
+
+with these two calls, the whole system of processes can be created.
+
+The basic structure of an OS (Monolithic)
+    - HW at the lowest level
+    - OS on top: files & process creation, kernel, privileged execution
+         - One monolithic software
+         - building such a software is hard
+         - a single fault can fail can fail the system
+
+Introduce the MicroKernel based approach
+    - HW
+    - Microkernel
+         - basic support for threads
+         - address space creation
+    - Services (user space)
+         - process...
+         - file server...
+
+Basic design
+     - hierarchical
+     - modular
+     - push as much as possible in user space
+     - provide only essential functions.mechanisms at kernel level.
+
+Downfall of this approach: 
+    - execution efficiency is compromised.
+
+Benefits:
+    + clean - separation concerns
+    + fault isolation
+    + flexibility in functionality and design
+
+Only placed used is with Minix. Developed by Andrew Tanenbaum.
+
+All modern OS, windows/UNIX/LINUX, are monolithic
+
+Third, approach uses libraries in the user space
+
+Fourth approach, virtual machines
+
+Fifth approach, distribute hardware resources directly
+
+Oct 2nd, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^^
+
+CPU Scheduling
+
+- Time scheduling...appointment to use CPU
+
+Simplest Case
+    - Jobs must be uninterrupted. 
+    - 1 CPU
+
+Problem
+     Given - Set of jobs
+               - 1 CPU
+     Asked - Arrange jobs in a way they are executed...[criteria]
+               Criteria:
+                    - User: fairness, they want their turn to run the system. measured in result time less submission time (turn around time).
+                    - System:  effectively use of resources, minimize idle time(utilization)
+
+processes have: id, arrival time…
+
+Scheduling based purely on arrival time
+     - FIFO, queue data structure
+     - Fair only if jobs are of equal size.
+     - job1=2000, job2=10, so job1_turn_around_time(tat) = 2000, job2_tat=2010, avg = 2005
+
+Often fairness is associated with the amount of a service required.
+
+How to reduce individual turn around time?
+     - Shortest job first (SJF)
+     - job1=10, job2=2000, so job1_tat = 10, job2_tat=2010, avg = 1010 (assuming they arrive at the same time)
+
+When a job is going for I/O the CPU could be scheduled to some other job. Which Job? The job with earliest arrival time (next in queue).
+
+What if the I/O wait job becomes ready?
+     - Allow the current job to continue
+     - get the CPU back and give it to the I/O returned job. (requires preempt (taking the CPU away forcefully)).
+
+Assume that we have the preemption mechanism. What if the 2000 job has already started and the 10 job arrives? Interrupt the job. But what if the there is only 5 left of the 2000 job? Schedule the Shortest Remaining Time Job Next (SRTJN).
+     - Scheduling decision must be made at every arrival point.
+
+This is ugly. 
+
+Introducing context switching. 
+Frequent switch is not good for utilization.
+
+Time must be sliced into smaller units (Quanta) and the CPU must be served for these Quantas. 
+     - How much quanta?
+     - Who keeps track of the quanta usage? (HW)
+     - How to get the control back after the quanta expires? (HW)
+
+How much quanta?
+     Factors that influence the determination of Quanta
+          - Clock Speed
+          - Context switch cost
+          - Acceptable response
+          
+q =0 is 100% overhead
+q=infinity, no responsivness, FIFO
+Tannenbaum agrues: c:q ~20%:80%
+
+Large q, slower response, higher utilization, low overhead
+Small q, fast response, low utilization, high overhead.
+
+Round robin: The scheduler assigns a fixed time unit per process, and cycles through them.
+CPU: ->p1->p2->p3->...->(return to start)
+Need a mechanism to keep track of the quanta usage and get control after the quanta expires.
+     - Magic box:
+          - counter register (get control back)
+          - holder register (set write, q)
+          - clock pulse
+
+Processe:
+
+::
+    While () {
+         copy from holder register
+         decrement counter at every clock pulse
+         interrupt when at zero
+    }
+
+- Save the context, give control to the scheduler. Done but the interrupt handler.
+
+Other interrupts, such as I/O, use a different mechanism for getting control...
+
+Priorities
+
+- Use separate queues and move the jobs around 
+- CPU will be served in a nonempty queue with highest priority
+
+
+Oct 9th, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^^
+
+Missed, stayed home with Spencer...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

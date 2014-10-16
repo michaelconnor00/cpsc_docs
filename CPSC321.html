@@ -51,6 +51,448 @@
             
   <div class="section" id="cpsc-321-lecture-and-study-notes">
 <h1>CPSC 321 Lecture and Study Notes<a class="headerlink" href="#cpsc-321-lecture-and-study-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sep-11-2014-lecture">
+<h2>Sep, 11, 2014 Lecture<a class="headerlink" href="#sep-11-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p>The OS has external needs...
+The HW has functionality…</p>
+<dl class="docutils">
+<dt><strong>Basic Structure of a computer:</strong></dt>
+<dd>1 - CPU
+2 - Memory
+4 - Bus
+3 - Disk (storage)
+3 - input
+3 - output</dd>
+<dt><strong>How does it function? work?</strong></dt>
+<dd><ul class="first last simple">
+<li>We need instructions to execute. From where?</li>
+<li>Main memory is dynamic and is considered “blank”</li>
+<li>There is a read only memory that has the startup instructions</li>
+<li>These instructions will instruct the CPU what to do next, i.e. - load more instructions to memory for disk.</li>
+<li>The operating system gets loaded first and it will take control of the system before any other programs run.</li>
+<li>The operating system (kernel) stays in memory during operation</li>
+<li>Bootstrapping is the technique used for</li>
+</ul>
+</dd>
+<dt><strong>CPU executes the instructions in RAM:</strong></dt>
+<dd><ul class="first last">
+<li><p class="first">The program counter register holds the instruction to be executed next. (The Most Important Register)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Types of instructions:</dt>
+<dd><ul class="first last simple">
+<li>Arithmetic - Add, Sub, ...</li>
+<li>Logical: =, &gt;, &lt;, ...</li>
+<li>Data Movement - Load, Store, Move,...</li>
+<li>Flow Control - Jump Cond, Jump Un-Cond</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">In order to not execute the next instruction, the PC has to be overwritten (by the program instruction). This can make the program more complex. It is a trade-off over program complexity and performance. 90% of the time, the next instruction to be executed. So it this isn’t a big problem.</p>
+</li>
+</ul>
+</dd>
+<dt><strong>Important Registers:</strong></dt>
+<dd><ul class="first last simple">
+<li>PC!</li>
+<li>Instruction register - To hold the instruction it self.</li>
+<li>Memory address register - address of instruction to be loaded or stored</li>
+<li>Memory data register- instruction to be loaded to IR</li>
+<li>Stack pointer - “top&#8221; of the stack (Most important for program execution)</li>
+<li>Base register - “bottom” of the stack</li>
+</ul>
+</dd>
+<dt><strong>Why Stack?</strong></dt>
+<dd><ul class="first last simple">
+<li>a convient means of storage for executing programs</li>
+<li>current executions push current variables to the stack, on completion it is emptied and the previous program execution is right under it. Or the original program could branch to a new program execution.</li>
+</ul>
+</dd>
+<dt><strong>Components of an instruction</strong></dt>
+<dd><ul class="first last simple">
+<li>operation (what to do)</li>
+<li>data/operands (on what) - Contents/address</li>
+</ul>
+</dd>
+</dl>
+<p>———————————————————————</p>
+<div class="section" id="computer-system">
+<h3>Computer System<a class="headerlink" href="#computer-system" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">Hardware (see above)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Software (Note the separation between these is not definitive)</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Applications</dt>
+<dd><ul class="first last simple">
+<li>Real World Problems</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>System Software</dt>
+<dd><ul class="first last simple">
+<li>Manage HW</li>
+<li>Help with Application development - compiler, editor, linker...</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="evolution-of-os">
+<h3>Evolution of OS<a class="headerlink" href="#evolution-of-os" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Batch</dt>
+<dd><dl class="first last docutils">
+<dt>Early: (sequential)</dt>
+<dd>Card reader translated to tape
+Computer read from tape
+Wrote to output tape
+output tape to printer</dd>
+</dl>
+</dd>
+</dl>
+<p>This is slow. The CPU is 97% idle. Therefore the next progression was to get the CPU to execute a different program while it is waiting. For this to work, a shared and managed memory is required, This is where the OS came from.</p>
+<dl class="docutils">
+<dt><strong>MultiPrograms</strong></dt>
+<dd><dl class="first last docutils">
+<dt>Memory Management:</dt>
+<dd><ul class="first last simple">
+<li>protection</li>
+<li>sharing/swapping</li>
+</ul>
+</dd>
+<dt>Scheduling</dt>
+<dd><ul class="first last simple">
+<li>which program to run next</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Interactions</strong></dt>
+<dd><ul class="first last">
+<li><p class="first">Need responsiveness for the user to interact</p>
+</li>
+<li><p class="first">The OS should control the CPU more closely</p>
+</li>
+<li><p class="first">Pre-emption (SP), OS needs to take control of the CPU when every it needs it (incl during execution).</p>
+</li>
+<li><p class="first">This is where the interrupts come in.</p>
+</li>
+<li><p class="first">Interrupt is a signal seeking attention from the CPU.</p>
+</li>
+<li><dl class="first docutils">
+<dt>sources of interrupts: (by interrupt handler routine of OS)</dt>
+<dd><ul class="first last simple">
+<li>I/O</li>
+<li>Clock</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Filesystem</strong></p>
+<dl class="docutils">
+<dt><strong>Main topics of OS:</strong></dt>
+<dd>Memory Management
+Process Management
+Filesystem Management</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="sep-18th-2014-lecture">
+<h2>Sep 18th, 2014 Lecture<a class="headerlink" href="#sep-18th-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p>Missed due to Flu...</p>
+</div>
+<div class="section" id="sep-25th-2014-lecture">
+<h2>Sep 25th, 2014 Lecture<a class="headerlink" href="#sep-25th-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p><strong>Two main abstractions are identified and used extensively in most modern operating systems.</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Files (storage unit)</li>
+<li>Process(es) (execution unit)</li>
+</ul>
+</div></blockquote>
+<p>This follows the UNIX philosophy.</p>
+<dl class="docutils">
+<dt>With these abstractions, OS = managing files and processes</dt>
+<dd><ul class="first last simple">
+<li>files being: file control block, and file description?</li>
+<li>process control block, and process descriptor</li>
+</ul>
+</dd>
+<dt><strong>Filesystem management</strong></dt>
+<dd><ul class="first last simple">
+<li>basic operations: create, copy, move, delete</li>
+<li>production and security</li>
+<li>distribution of files</li>
+<li>reliable</li>
+</ul>
+</dd>
+</dl>
+<p>The organization of the filesystem is a tree structure:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>&#8212;-/
+&#8212;&#8212;&#8211;usr (these are called directories)
+&#8212;&#8212;&#8212;&#8212;folder1
+&#8212;&#8212;&#8212;&#8212;folder2
+&#8212;&#8212;&#8212;&#8212;&#8212;-file1
+&#8212;&#8212;&#8211;bin
+&#8212;&#8212;&#8212;&#8212;folder1
+&#8212;&#8212;&#8212;&#8212;&#8212;-file1
+&#8212;&#8212;&#8212;&#8212;&#8212;-file2
+&#8212;&#8212;&#8212;&#8212;&#8212;-folder11
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;file11</dd>
+<dt><strong>Process management</strong></dt>
+<dd><ul class="first last simple">
+<li>Can we use the same tree structure organization?</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils">
+<dt>::</dt>
+<dd>——init
+————parent process
+————————child process</dd>
+</dl>
+<p>Who creates the processes? The OS
+Who supplies the program? The User</p>
+<dl class="docutils">
+<dt>Three steps in process creation:</dt>
+<dd><ul class="first last simple">
+<li>create system resources</li>
+<li>include user supplied program</li>
+<li>make it ready to go</li>
+</ul>
+</dd>
+<dt>Two system calls for processes:</dt>
+<dd><ul class="first last simple">
+<li>fork() - create an identical thread(process)</li>
+<li>exec() - use fork, then exec to create a new process (overwrites the code)</li>
+</ul>
+</dd>
+</dl>
+<p>with these two calls, the whole system of processes can be created.</p>
+<dl class="docutils">
+<dt>The basic structure of an OS (Monolithic)</dt>
+<dd><ul class="first last">
+<li><p class="first">HW at the lowest level</p>
+</li>
+<li><dl class="first docutils">
+<dt>OS on top: files &amp; process creation, kernel, privileged execution</dt>
+<dd><ul class="first last simple">
+<li>One monolithic software</li>
+<li>building such a software is hard</li>
+<li>a single fault can fail can fail the system</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Introduce the MicroKernel based approach</dt>
+<dd><ul class="first last">
+<li><p class="first">HW</p>
+</li>
+<li><dl class="first docutils">
+<dt>Microkernel</dt>
+<dd><ul class="first last simple">
+<li>basic support for threads</li>
+<li>address space creation</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Services (user space)</dt>
+<dd><ul class="first last simple">
+<li>process...</li>
+<li>file server...</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Basic design</dt>
+<dd><ul class="first last simple">
+<li>hierarchical</li>
+<li>modular</li>
+<li>push as much as possible in user space</li>
+<li>provide only essential functions.mechanisms at kernel level.</li>
+</ul>
+</dd>
+<dt>Downfall of this approach:</dt>
+<dd><ul class="first last simple">
+<li>execution efficiency is compromised.</li>
+</ul>
+</dd>
+<dt>Benefits:</dt>
+<dd><ul class="first last simple">
+<li>clean - separation concerns</li>
+<li>fault isolation</li>
+<li>flexibility in functionality and design</li>
+</ul>
+</dd>
+</dl>
+<p>Only placed used is with Minix. Developed by Andrew Tanenbaum.</p>
+<p>All modern OS, windows/UNIX/LINUX, are monolithic</p>
+<p>Third, approach uses libraries in the user space</p>
+<p>Fourth approach, virtual machines</p>
+<p>Fifth approach, distribute hardware resources directly</p>
+</div>
+<div class="section" id="oct-2nd-2014-lecture">
+<h2>Oct 2nd, 2014 Lecture<a class="headerlink" href="#oct-2nd-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p>CPU Scheduling</p>
+<ul class="simple">
+<li>Time scheduling...appointment to use CPU</li>
+</ul>
+<dl class="docutils">
+<dt>Simplest Case</dt>
+<dd><ul class="first last simple">
+<li>Jobs must be uninterrupted.</li>
+<li>1 CPU</li>
+</ul>
+</dd>
+<dt>Problem</dt>
+<dd><dl class="first last docutils">
+<dt>Given - Set of jobs</dt>
+<dd><ul class="first last simple">
+<li>1 CPU</li>
+</ul>
+</dd>
+<dt>Asked - Arrange jobs in a way they are executed...[criteria]</dt>
+<dd><dl class="first last docutils">
+<dt>Criteria:</dt>
+<dd><ul class="first last simple">
+<li>User: fairness, they want their turn to run the system. measured in result time less submission time (turn around time).</li>
+<li>System:  effectively use of resources, minimize idle time(utilization)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>processes have: id, arrival time…</p>
+<dl class="docutils">
+<dt>Scheduling based purely on arrival time</dt>
+<dd><ul class="first last simple">
+<li>FIFO, queue data structure</li>
+<li>Fair only if jobs are of equal size.</li>
+<li>job1=2000, job2=10, so job1_turn_around_time(tat) = 2000, job2_tat=2010, avg = 2005</li>
+</ul>
+</dd>
+</dl>
+<p>Often fairness is associated with the amount of a service required.</p>
+<dl class="docutils">
+<dt>How to reduce individual turn around time?</dt>
+<dd><ul class="first last simple">
+<li>Shortest job first (SJF)</li>
+<li>job1=10, job2=2000, so job1_tat = 10, job2_tat=2010, avg = 1010 (assuming they arrive at the same time)</li>
+</ul>
+</dd>
+</dl>
+<p>When a job is going for I/O the CPU could be scheduled to some other job. Which Job? The job with earliest arrival time (next in queue).</p>
+<dl class="docutils">
+<dt>What if the I/O wait job becomes ready?</dt>
+<dd><ul class="first last simple">
+<li>Allow the current job to continue</li>
+<li>get the CPU back and give it to the I/O returned job. (requires preempt (taking the CPU away forcefully)).</li>
+</ul>
+</dd>
+<dt>Assume that we have the preemption mechanism. What if the 2000 job has already started and the 10 job arrives? Interrupt the job. But what if the there is only 5 left of the 2000 job? Schedule the Shortest Remaining Time Job Next (SRTJN).</dt>
+<dd><ul class="first last simple">
+<li>Scheduling decision must be made at every arrival point.</li>
+</ul>
+</dd>
+</dl>
+<p>This is ugly.</p>
+<p>Introducing context switching.
+Frequent switch is not good for utilization.</p>
+<dl class="docutils">
+<dt>Time must be sliced into smaller units (Quanta) and the CPU must be served for these Quantas.</dt>
+<dd><ul class="first last simple">
+<li>How much quanta?</li>
+<li>Who keeps track of the quanta usage? (HW)</li>
+<li>How to get the control back after the quanta expires? (HW)</li>
+</ul>
+</dd>
+<dt>How much quanta?</dt>
+<dd><dl class="first last docutils">
+<dt>Factors that influence the determination of Quanta</dt>
+<dd><ul class="first last simple">
+<li>Clock Speed</li>
+<li>Context switch cost</li>
+<li>Acceptable response</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>q =0 is 100% overhead
+q=infinity, no responsivness, FIFO
+Tannenbaum agrues: c:q ~20%:80%</p>
+<p>Large q, slower response, higher utilization, low overhead
+Small q, fast response, low utilization, high overhead.</p>
+<p>Round robin: The scheduler assigns a fixed time unit per process, and cycles through them.
+CPU: -&gt;p1-&gt;p2-&gt;p3-&gt;...-&gt;(return to start)
+Need a mechanism to keep track of the quanta usage and get control after the quanta expires.</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>Magic box:</dt>
+<dd><ul class="first last simple">
+<li>counter register (get control back)</li>
+<li>holder register (set write, q)</li>
+<li>clock pulse</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Processe:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first docutils">
+<dt>While () {</dt>
+<dd>copy from holder register
+decrement counter at every clock pulse
+interrupt when at zero</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<ul class="simple">
+<li>Save the context, give control to the scheduler. Done but the interrupt handler.</li>
+</ul>
+<p>Other interrupts, such as I/O, use a different mechanism for getting control...</p>
+<p>Priorities</p>
+<ul class="simple">
+<li>Use separate queues and move the jobs around</li>
+<li>CPU will be served in a nonempty queue with highest priority</li>
+</ul>
+</div>
+<div class="section" id="oct-9th-2014-lecture">
+<h2>Oct 9th, 2014 Lecture<a class="headerlink" href="#oct-9th-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p>Missed, stayed home with Spencer...</p>
+</div>
 </div>
 
 
@@ -59,6 +501,22 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CPSC 321 Lecture and Study Notes</a><ul>
+<li><a class="reference internal" href="#sep-11-2014-lecture">Sep, 11, 2014 Lecture</a><ul>
+<li><a class="reference internal" href="#computer-system">Computer System</a></li>
+<li><a class="reference internal" href="#evolution-of-os">Evolution of OS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sep-18th-2014-lecture">Sep 18th, 2014 Lecture</a></li>
+<li><a class="reference internal" href="#sep-25th-2014-lecture">Sep 25th, 2014 Lecture</a></li>
+<li><a class="reference internal" href="#oct-2nd-2014-lecture">Oct 2nd, 2014 Lecture</a></li>
+<li><a class="reference internal" href="#oct-9th-2014-lecture">Oct 9th, 2014 Lecture</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Welcome to CPSC Documentation!</a></p>
