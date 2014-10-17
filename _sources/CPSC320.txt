@@ -26,14 +26,17 @@ Project discussion:
 Lecture:
 ---------
 
+Language Constructs
+
 * **Expressions**: 
     - side effects in expressions are where they modify a memory location
     - order in which functions are evoked matter, z = f(x) + g(x) or z = f(x) && g(x).
     - 
 
 C: (sidebar?) What does this loop do?
-.. highlight:: c
-::
+
+.. code-block:: c
+
     unsigned char *p, *q;
     while (*p++=*q++); //*p is the location that the pointer p points to.
 
@@ -62,8 +65,8 @@ C: (sidebar?) What does this loop do?
 
 
 Example:
-.. highlight:: c
-::
+
+.. code-block:: c
     x = x +1
     
 - left part is an expression that points to a box where the new value will be placed. Called L-value.
@@ -75,5 +78,68 @@ An L-expression is a reference to a memory location
 int x = 2+3;
 - Definition: a storage location that is bound to the variable x (int x). not a pure definition because it effects storage (reserves space)
 - Expression: 2+3 is put in the storage location(x=2+3)
+
+
+Oct 17th, 2014 Lecture
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Control Structure
+------------------
+
+**Sequential Composition:**
+
+::
+    x = x + 1; y = y + 1;
+
+**Bracketing:**
+    * ie - use in if condition to group the contents together.
+
+**Selection:**
+    * if/then/else
+
+**Repetition:**
+    * iteration...
+    *  while loops
+
+
+Sidebar:
+
+    * ((lambda)x.Ex)a
+        - where x is the 'formal parameter', 
+        - and a is the 'actual parameter'
+        - and Ex is the 'Abstract'
+
+..note:: 
+    * Value returning expression is a function
+    * Side effect expression is a procedure...
+    * Class is an abstraction of definition
+
+
+f(x) = x^2 (f defines the function x^2)
+f = (lambda)x.*xx (f defines the function (lambda)x.*xx)
+
+Parameter Passing
+-----------------
+
+.. code-block::c
+    
+    // Pass by value
+    int n = 10; // 1 binds n to a storage location with 10
+    int f (int x){ // 3 binds x to a storage location, 10 copied to x
+        x = x + 1; // 
+        return x;
+    }
+    n = f(n); // 2 function is called
+
+**Ways to Pass Parameters:**
+    * The above is 'Pass by Value'
+    * Another possibility for the above is to 'Pass by Reference', where x would be a pointer to n. Then the function could be a void function
+    * A third option is to 'Call(Pass) by Name', used in Alog60 for example, but not used very often.
+    * 'Pass by Value-Result', used in distributed computing and remote calls...
+    * 'Pass by Result', random number function or input function
+
+
+
+
 
 

@@ -83,6 +83,7 @@
 </div>
 <div class="section" id="lecture">
 <h3>Lecture:<a class="headerlink" href="#lecture" title="Permalink to this headline">¶</a></h3>
+<p>Language Constructs</p>
 <ul>
 <li><dl class="first docutils">
 <dt><strong>Expressions</strong>:</dt>
@@ -95,15 +96,14 @@
 </dl>
 </li>
 </ul>
-<p>C: (sidebar?) What does this loop do?
-.. highlight:: c</p>
-<div class="highlight-python"><div class="highlight"><pre>unsigned char *p, *q;
-while (*p++=*q++); //*p is the location that the pointer p points to.
+<p>C: (sidebar?) What does this loop do?</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="o">++=*</span><span class="n">q</span><span class="o">++</span><span class="p">);</span> <span class="c1">//*p is the location that the pointer p points to.</span>
 
-//p = x, *p is the memory location of x
-//q = y, *q is the memory location of y
-//so the contents of q is stored at the location *p. Then incremented.
-//This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.
+<span class="c1">//p = x, *p is the memory location of x</span>
+<span class="c1">//q = y, *q is the memory location of y</span>
+<span class="c1">//so the contents of q is stored at the location *p. Then incremented.</span>
+<span class="c1">//This loop essentially copies one string to another location. terminates when it hits the null char, and evaluates to false.</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -136,11 +136,7 @@ while (*p++=*q++); //*p is the location that the pointer p points to.
 <ul class="simple">
 <li><strong>Sequencers</strong>:</li>
 </ul>
-<p>Example:
-.. highlight:: c</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span><span class="mi">1</span>
-</pre></div>
-</div>
+<p>Example:</p>
 <ul>
 <li><p class="first">left part is an expression that points to a box where the new value will be placed. Called L-value.</p>
 </li>
@@ -159,6 +155,73 @@ while (*p++=*q++); //*p is the location that the pointer p points to.
 - Expression: 2+3 is put in the storage location(x=2+3)</p>
 </div>
 </div>
+<div class="section" id="oct-17th-2014-lecture">
+<h2>Oct 17th, 2014 Lecture<a class="headerlink" href="#oct-17th-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="control-structure">
+<h3>Control Structure<a class="headerlink" href="#control-structure" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sequential Composition:</strong></p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>x = x + 1; y = y + 1;</dd>
+<dt><strong>Bracketing:</strong></dt>
+<dd><ul class="first last simple">
+<li>ie - use in if condition to group the contents together.</li>
+</ul>
+</dd>
+<dt><strong>Selection:</strong></dt>
+<dd><ul class="first last simple">
+<li>if/then/else</li>
+</ul>
+</dd>
+<dt><strong>Repetition:</strong></dt>
+<dd><ul class="first last simple">
+<li>iteration...</li>
+<li>while loops</li>
+</ul>
+</dd>
+</dl>
+<p>Sidebar:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>((lambda)x.Ex)a</dt>
+<dd><ul class="first last simple">
+<li>where x is the &#8216;formal parameter&#8217;,</li>
+<li>and a is the &#8216;actual parameter&#8217;</li>
+<li>and Ex is the &#8216;Abstract&#8217;</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>..note::</dt>
+<dd><ul class="first last simple">
+<li>Value returning expression is a function</li>
+<li>Side effect expression is a procedure...</li>
+<li>Class is an abstraction of definition</li>
+</ul>
+</dd>
+</dl>
+<p>f(x) = x^2 (f defines the function x^2)
+f = (lambda)x.*xx (f defines the function (lambda)x.*xx)</p>
+</div>
+<div class="section" id="parameter-passing">
+<h3>Parameter Passing<a class="headerlink" href="#parameter-passing" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>Ways to Pass Parameters:</strong></dt>
+<dd><ul class="first last simple">
+<li>The above is &#8216;Pass by Value&#8217;</li>
+<li>Another possibility for the above is to &#8216;Pass by Reference&#8217;, where x would be a pointer to n. Then the function could be a void function</li>
+<li>A third option is to &#8216;Call(Pass) by Name&#8217;, used in Alog60 for example, but not used very often.</li>
+<li>&#8216;Pass by Value-Result&#8217;, used in distributed computing and remote calls...</li>
+<li>&#8216;Pass by Result&#8217;, random number function or input function</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 
 
@@ -173,6 +236,11 @@ while (*p++=*q++); //*p is the location that the pointer p points to.
 <li><a class="reference internal" href="#oct-15-2014-lecture">Oct 15, 2014 Lecture</a><ul>
 <li><a class="reference internal" href="#project-discussion">Project discussion:</a></li>
 <li><a class="reference internal" href="#lecture">Lecture:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oct-17th-2014-lecture">Oct 17th, 2014 Lecture</a><ul>
+<li><a class="reference internal" href="#control-structure">Control Structure</a></li>
+<li><a class="reference internal" href="#parameter-passing">Parameter Passing</a></li>
 </ul>
 </li>
 </ul>
