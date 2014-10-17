@@ -122,7 +122,6 @@ Parameter Passing
 -----------------
 
 .. code-block::c
-    
     // Pass by value
     int n = 10; // 1 binds n to a storage location with 10
     int f (int x){ // 3 binds x to a storage location, 10 copied to x
