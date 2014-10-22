@@ -145,7 +145,7 @@ Parameter Passing
 
 
 Oct 22nd, 2014 Lecture
-======================
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Talk about abstractions. It is probably the most important feature of programming languages. How is this supported in Programming languages?
 
@@ -178,9 +178,8 @@ f(x) = ... , where = is the assignment operator
 
     (define square 
         (lambda (x)
-            (* xx)
-        )
-    )
+            (* xx)))
+
 
 .. code-block:: fortran
 
