@@ -213,12 +213,12 @@ Types of Parameter Passing (Passing By:)
     b = f(a);
     output a, b;
 
-=======================
-              | a | b 
-=======================
-Value-Result | 10 | 11
-Reference | 9 | 10
-=======================
++--------------+----+----+
+|              | a  | b  |
++--------------+----+----+
+| Value-Result | 10 | 11 |
+| Reference    | 9  | 10 |
++--------------+----+----+
 
 .. note:: The above code is bad practice, because the function f side effects on a.
 
@@ -227,15 +227,126 @@ Reference | 9 | 10
 Knowing the how a language uses parameters is very important. 
 
 Static vs Dynamic scoping of variables
+--------------------------------------
+
+.. code-block:: c
+
+    int a = 10, k = 5;
+    int g(int x){
+        return (x * k); 
+    }
+    void f(void){
+        int k = 3;
+        output g(2);
+    }
+
++--------+---------------+--------------+
+|        | Static        | Dynamic      |
++--------+---------------+--------------+
+| output | k=5, 5*2 = 10 | k=3, 3*2 = 6 |
++--------+---------------+--------------+
 
 
+.. code-block:: c
+
+    const int i = 1;
+    const int j = 2;
+    const int k = 3;
+    int global = 66;
+    void f(int x){
+        int i = i + j + k;
+        int j = i + j + k;
+        int k = i + j + k;
+        x = i + k;
+        global ++;
+    }
+    int main(){
+        f(global);
+        cout << global <= eval; //This line isn't right
+        return 0;
+    }
+
++------+--------------+--------+
+| Def  | Par          | Output |
++------+--------------+--------+
+| Seq. | Value        | 67     |
+| Seq. | Value-Result | 26     |
+| Seq. | Reference    | 27     |
+| Sim. | Value        | 67     |
+| Sim. | Value-Result | 12     |
+| Sim. | Reference    | 13     |
++------+--------------+--------+
+
+Pass by Name
+------------
+
+.. code-block:: c
+
+    int a = 10, k = 5;
+    int f(int x){
+        return (2 * x + a + k); // Here x would be substituted by a, 
+                                // and introduce a naming conflict. Rename a in main().
+    }
+    int main(){
+        int a = 20, k = 10; rename to a1, and k1
+        cout << f(a) + a + k; //cout???? 85 -- rename to a1, k1, [2*a1+a+k] would be substituted here.
+        return;
+    }
+
+**Procedure:**
+* Substitute (textually) actual parameter for formal parameter in procedure body (remove naming conflicts). (Bracketing if not an L-Exp)
+* Substitute (textually) modified procedure body for the invocation (remove naming conflicts).
+
+.. note:: When removing naming conflicts, always rename the bound variable. Depends on scope. The most local.
+
+What is an L-expression???
+
+.. code-block:: c
+
+    int i = 0;
+    a[3] = {0, 1, 2};
+    int f(int x){
+        int y = x; // sub a[i], a[0]
+        i++;
+        y = y + x; // sub a[i], a[1]
+        i++;
+        y = y + x; // sub a[i], a[2]
+        return y;
+    }
+    int main(){
+        f(a[i]); // Hard to track mentally. 
+    }
+
+.. note:: Compiler uses a function to do the substitution (pass by name), called THUNK.
 
 
- 
-  
+.. code-block:: c
+
+    void f(int x, int &y){ // x is pass by value, y is pass by reference
+        c(x,y);
+    }
+    int a = 1, b = 2;
+    f(a, b); // contents of a will be copied to x, y will be an alias to b.
+
+Correspondence of languages...
 
 
+Assignment:
+-----------
 
+Example A:  L := E; -> L is an *L-Exp*, E is and *Expression*
+
+#. Find L-value of L, l
+#. Find R-value of E, e
+#. Place e into location l
+
+After A: ::
+
+    The R-value of E *before* execution of A is the same as the R-value of L after execution of A. 
+    There are situations where this is not true. ie - a[i++] = i, after execution a[i+1] != a[i]. Because a side effect
+    was introduced into L. 
+
+.. warning:: Exam question: a = (b = c), Cleft, Cright are implementation. Cleft = (steps 1,2,3), Cright = (steps 2,1,3)
 
 
 
