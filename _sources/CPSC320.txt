@@ -68,6 +68,8 @@ Example:
 
 .. code-block:: c
 
+    source
+
     x = x +1
     
 - left part is an expression that points to a box where the new value will be placed. Called L-value.
@@ -125,7 +127,8 @@ Parameter Passing
 
 .. code-block:: c
 
-    // Pass by value
+    source
+
     int n = 10; // 1 binds n to a storage location with 10
     int f (int x){ // 3 binds x to a storage location, 10 copied to x
         x = x + 1; // 
@@ -139,6 +142,104 @@ Parameter Passing
     * A third option is to 'Call(Pass) by Name', used in Alog60 for example, but not used very often.
     * 'Pass by Value-Result', used in distributed computing and remote calls...
     * 'Pass by Result', random number function or input function
+
+
+Oct 22nd, 2014 Lecture
+======================
+
+Talk about abstractions. It is probably the most important feature of programming languages. How is this supported in Programming languages?
+
+lambda - (l)x1x2...xn.E[x1,x2,...,xn] --> **Definition,** where E[x1,x2,...,xn] is the *Abstract*, and x1x2...xn are the *Formal Parameters*
+
+fa1a2...an --> **Invocation** (call), where a1a2...an are the *Actual Parameters*
+
+
+Principle of Extraction
+-----------------------
+
+Expression --> Function (return values)
+Command --> Procedure (do not return values...)
+Definitions --> Class
+Sequencers --> ? not exactly abstracted straight
+
+f(x) = ... , where = is the assignment operator
+
+.. code-block:: c
+
+    int x = 1;
+    int &y = x; will put the alias y on x.
+
+    int a = 1;
+    int & f(int x){
+        return a;
+    }
+
+.. code-block:: scheme
+
+    (define square 
+        (lambda (x)
+            (* xx)
+        )
+    )
+
+.. code-block:: fortran
+
+    function f(x:integer):integer
+    begin ... end
+
+Types of Parameter Passing (Passing By:)
+----------------------------------------
+
+.. code-block:: c
+
+    int a = 10;
+    int f(int x){
+        ...
+    }
+    f(a);
+
+
+* Value: contents of a are copied into the location of x, on invocation.
+* Result: contents of x are copied into the location of a, on return.
+* Value-Result: does Value passing first on invocation, then Result passing on return.
+* Reference: Where x is an alias to the the parameter a.
+
+.. code-block:: c
+
+    int a = 10, b = 0;
+    int f(int x){
+        a = a-1;
+        return (x+1);
+    }
+    b = f(a);
+    output a, b;
+
+=======================
+              | a | b 
+=======================
+Value-Result | 10 | 11
+Reference | 9 | 10
+=======================
+
+.. note:: The above code is bad practice, because the function f side effects on a.
+
+.. important:: In distributed systems Reference passing is not feasible.
+
+Knowing the how a language uses parameters is very important. 
+
+Static vs Dynamic scoping of variables
+
+
+
+
+ 
+  
+
+
+
+
+
+
 
 
 

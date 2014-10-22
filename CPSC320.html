@@ -137,7 +137,9 @@
 <li><strong>Sequencers</strong>:</li>
 </ul>
 <p>Example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span><span class="mi">1</span>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">source</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span><span class="mi">1</span>
 </pre></div>
 </div>
 <ul>
@@ -213,7 +215,8 @@ f = (lambda)x.*xx (f defines the function (lambda)x.*xx)</p>
 </div>
 <div class="section" id="parameter-passing">
 <h3>Parameter Passing<a class="headerlink" href="#parameter-passing" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Pass by value</span>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">source</span>
+
 <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 1 binds n to a storage location with 10</span>
 <span class="kt">int</span> <span class="nf">f</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span> <span class="c1">// 3 binds x to a storage location, 10 copied to x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//</span>
@@ -233,8 +236,83 @@ f = (lambda)x.*xx (f defines the function (lambda)x.*xx)</p>
 </ul>
 </dd>
 </dl>
+<div class="section" id="oct-22nd-2014-lecture">
+<h4>Oct 22nd, 2014 Lecture<a class="headerlink" href="#oct-22nd-2014-lecture" title="Permalink to this headline">¶</a></h4>
+<p>Talk about abstractions. It is probably the most important feature of programming languages. How is this supported in Programming languages?</p>
+<p>lambda - (l)x1x2...xn.E[x1,x2,...,xn] &#8211;&gt; <strong>Definition,</strong> where E[x1,x2,...,xn] is the <em>Abstract</em>, and x1x2...xn are the <em>Formal Parameters</em></p>
+<p>fa1a2...an &#8211;&gt; <strong>Invocation</strong> (call), where a1a2...an are the <em>Actual Parameters</em></p>
 </div>
 </div>
+<div class="section" id="principle-of-extraction">
+<h3>Principle of Extraction<a class="headerlink" href="#principle-of-extraction" title="Permalink to this headline">¶</a></h3>
+<p>Expression &#8211;&gt; Function (return values)
+Command &#8211;&gt; Procedure (do not return values...)
+Definitions &#8211;&gt; Class
+Sequencers &#8211;&gt; ? not exactly abstracted straight</p>
+<p>f(x) = ... , where = is the assignment operator</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="n">will</span> <span class="n">put</span> <span class="n">the</span> <span class="n">alias</span> <span class="n">y</span> <span class="n">on</span> <span class="n">x</span><span class="p">.</span>
+
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-scheme"><div class="highlight"><pre><span class="p">(</span><span class="k">define </span><span class="nv">square</span>
+    <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span>
+        <span class="p">(</span><span class="nb">* </span><span class="nv">xx</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-fortran"><div class="highlight"><pre>function f(x:integer):integer
+begin ... end
+</pre></div>
+</div>
+</div>
+<div class="section" id="types-of-parameter-passing-passing-by">
+<h3>Types of Parameter Passing (Passing By:)<a class="headerlink" href="#types-of-parameter-passing-passing-by" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Value: contents of a are copied into the location of x, on invocation.</li>
+<li>Result: contents of x are copied into the location of a, on return.</li>
+<li>Value-Result: does Value passing first on invocation, then Result passing on return.</li>
+<li>Reference: Where x is an alias to the the parameter a.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="n">output</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-b">
+<h1>| a | b<a class="headerlink" href="#a-b" title="Permalink to this headline">¶</a></h1>
+<p>Value-Result | 10 | 11
+Reference | 9 | 10
+=======================</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above code is bad practice, because the function f side effects on a.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">In distributed systems Reference passing is not feasible.</p>
+</div>
+<p>Knowing the how a language uses parameters is very important.</p>
+<p>Static vs Dynamic scoping of variables</p>
 </div>
 
 
@@ -253,11 +331,17 @@ f = (lambda)x.*xx (f defines the function (lambda)x.*xx)</p>
 </li>
 <li><a class="reference internal" href="#oct-17th-2014-lecture">Oct 17th, 2014 Lecture</a><ul>
 <li><a class="reference internal" href="#control-structure">Control Structure</a></li>
-<li><a class="reference internal" href="#parameter-passing">Parameter Passing</a></li>
+<li><a class="reference internal" href="#parameter-passing">Parameter Passing</a><ul>
+<li><a class="reference internal" href="#oct-22nd-2014-lecture">Oct 22nd, 2014 Lecture</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#principle-of-extraction">Principle of Extraction</a></li>
+<li><a class="reference internal" href="#types-of-parameter-passing-passing-by">Types of Parameter Passing (Passing By:)</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a class="reference internal" href="#a-b">| a | b</a></li>
 </ul>
 
   <h4>Previous topic</h4>

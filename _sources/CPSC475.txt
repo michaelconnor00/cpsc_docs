@@ -2,8 +2,17 @@
 CPSC 475 Lecture and Study Notes
 ================================
 
-Oct 15, 2014 Lecture
+Oct 20, 2014 Lecture
 ^^^^^^^^^^^^^^^^^^^^^
 
+* Ch. 8 Working Together
+    - Benevolent Agents
+    - Self-interested Agents
+    - Coherence
+    - Coordination
+    - Contract Net
+    - 
+
+http://www.fipa.org/repository/aclspecs.html
 
 
