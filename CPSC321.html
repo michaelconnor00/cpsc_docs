@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="cpsc 0.0.1 documentation" href="index.html" />
-    <link rel="next" title="CPSC 320 Lecture and Study Notes" href="CPSC320.html" />
+    <link rel="next" title="h1" href="CPSC320.html" />
     <link rel="prev" title="Welcome to CPSC Documentation!" href="index.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="CPSC320.html" title="CPSC 320 Lecture and Study Notes"
+          <a href="CPSC320.html" title="h1"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to CPSC Documentation!"
@@ -488,6 +488,102 @@ Small q, fast response, low utilization, high overhead.</p>
 <h2>Oct 9th, 2014 Lecture<a class="headerlink" href="#oct-9th-2014-lecture" title="Permalink to this headline">¶</a></h2>
 <p>Missed, stayed home with Spencer...</p>
 </div>
+<div class="section" id="oct-16th-2014-lecture">
+<h2>Oct 16th, 2014 Lecture<a class="headerlink" href="#oct-16th-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p>Mid-Term</p>
+</div>
+<div class="section" id="oct-23rd-2014-lecture">
+<h2>Oct 23rd, 2014 Lecture<a class="headerlink" href="#oct-23rd-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="processes-interaction">
+<h3>Processes Interaction<a class="headerlink" href="#processes-interaction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Communication - Simply passing information</li>
+<li>Coordination - Some level of agreement is needed.</li>
+</ul>
+<div class="section" id="communication">
+<h4>Communication<a class="headerlink" href="#communication" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Who: Kernel/OS talks to Processes and Threads</p>
+</li>
+<li><p class="first">There is also a Process to Process communication.</p>
+</li>
+<li><p class="first">Types:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Process to Process - Hardest to implement.</li>
+<li>Kernel to Process - Easiest to implment.</li>
+<li>Process to Kernel - The kernel must provide a mechanism for this.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Ways to Communicate</p>
+<blockquote>
+<div><ul>
+<li><p class="first">shared/common memory location where both can read/write. Need kernel help to establish a common memory.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Two step process</li>
+<li>Step 1: Establish shared memory (By OS), communication convention. This is by the programmer (socket, serializer).</li>
+<li>Step 2: Communicate</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><em>message</em> through communication agent (network + SW).</p>
+<blockquote>
+<div><ul class="simple">
+<li>Requires the OS to provide an endpoint (port) descriptor.</li>
+<li>Can be used locally as well as to other computers</li>
+<li>OS will also have to establish a message <em>queue</em></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Signals is an OS level communication convention.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Also called a software interrupt.</li>
+<li>Set of events</li>
+<li>Kernel will create a signal for each process on creation. This is used to communicate to the process.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="coordination">
+<h4>Coordination<a class="headerlink" href="#coordination" title="Permalink to this headline">¶</a></h4>
+<p>This is the purpose of communication. If the processes are not coordinated properly, (not an exhaustive list)</p>
+<ul class="simple">
+<li>Can lead to inconsistency and race condition (un-predictable results)</li>
+<li><em>Deadlock</em>, when every process is waiting for some other, and no progress is made. everybody starves.</li>
+<li><em>Starvation</em>, when one process is in <em>deadlock</em>. Unfairness.</li>
+<li><em>Priority Inversion</em>, on the Mars Pathfinder project (1997). Priority scheduling and mutual exclusion problems solved seperately, but when combined, failed.</li>
+</ul>
+<p>This must be avoided. How?</p>
+<p>What we want:
+* Safety - bad things should not happen, required condition should not be violated, ie - no two processes are to write to the same location at the same time.
+* Liveness - Some good things must happen, the system must progress. At least one process should progress.
+* Fairness -</p>
+<ul class="simple">
+<li>Test and set code that executes atomically, so you can use flags</li>
+<li>Semaphore, is on top of atomic code. Uses P and V functions that run atomically. At OS level.</li>
+<li>Monitors</li>
+</ul>
+</div>
+<div class="section" id="popular-problems">
+<h4>Popular Problems<a class="headerlink" href="#popular-problems" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Mutual Exclusion</li>
+<li>Dining Philosopher problem</li>
+<li>Reader-Writer problem</li>
+<li>Producer -Consumer problem</li>
+<li>Cigarette Smoker Problem</li>
+<li>Sleeping barbers problem</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -508,6 +604,16 @@ Small q, fast response, low utilization, high overhead.</p>
 <li><a class="reference internal" href="#sep-25th-2014-lecture">Sep 25th, 2014 Lecture</a></li>
 <li><a class="reference internal" href="#oct-2nd-2014-lecture">Oct 2nd, 2014 Lecture</a></li>
 <li><a class="reference internal" href="#oct-9th-2014-lecture">Oct 9th, 2014 Lecture</a></li>
+<li><a class="reference internal" href="#oct-16th-2014-lecture">Oct 16th, 2014 Lecture</a></li>
+<li><a class="reference internal" href="#oct-23rd-2014-lecture">Oct 23rd, 2014 Lecture</a><ul>
+<li><a class="reference internal" href="#processes-interaction">Processes Interaction</a><ul>
+<li><a class="reference internal" href="#communication">Communication</a></li>
+<li><a class="reference internal" href="#coordination">Coordination</a></li>
+<li><a class="reference internal" href="#popular-problems">Popular Problems</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -517,7 +623,7 @@ Small q, fast response, low utilization, high overhead.</p>
                         title="previous chapter">Welcome to CPSC Documentation!</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="CPSC320.html"
-                        title="next chapter">CPSC 320 Lecture and Study Notes</a></p>
+                        title="next chapter">h1</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/CPSC321.txt"
@@ -547,7 +653,7 @@ Small q, fast response, low utilization, high overhead.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="CPSC320.html" title="CPSC 320 Lecture and Study Notes"
+          <a href="CPSC320.html" title="h1"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to CPSC Documentation!"

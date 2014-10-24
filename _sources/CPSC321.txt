@@ -1,9 +1,10 @@
-================================
+********************************
 CPSC 321 Lecture and Study Notes
-================================
+********************************
 
 Sep, 11, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^
+=====================
+
 
 The OS has external needs...
 The HW has functionality…
@@ -51,9 +52,8 @@ The HW has functionality…
      - data/operands (on what) - Contents/address
 
 
-
 Computer System
-++++++++++++++++
+---------------
 
      - Hardware (see above)
      - Software (Note the separation between these is not definitive)
@@ -66,7 +66,7 @@ Computer System
 
 
 Evolution of OS
-++++++++++++++++
+---------------
 
 Batch
      Early: (sequential)
@@ -103,13 +103,13 @@ This is slow. The CPU is 97% idle. Therefore the next progression was to get the
 
 
 Sep 18th, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^^
+======================
 
 Missed due to Flu...
 
 
 Sep 25th, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^
+======================
 
 **Two main abstractions are identified and used extensively in most modern operating systems.**
 
@@ -209,7 +209,7 @@ Fourth approach, virtual machines
 Fifth approach, distribute hardware resources directly
 
 Oct 2nd, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^
+=====================
 
 CPU Scheduling
 
@@ -303,13 +303,87 @@ Priorities
 
 
 Oct 9th, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^
+=====================
 
 Missed, stayed home with Spencer...
 
 
+Oct 16th, 2014 Lecture
+======================
+
+Mid-Term
+
+Oct 23rd, 2014 Lecture
+======================
+
+Processes Interaction
+---------------------
+
+* Communication - Simply passing information
+* Coordination - Some level of agreement is needed.
+
+Communication
+^^^^^^^^^^^^^
+
+* Who: Kernel/OS talks to Processes and Threads
+* There is also a Process to Process communication.
+* Types:
+
+    - Process to Process - Hardest to implement. 
+    - Kernel to Process - Easiest to implment.
+    - Process to Kernel - The kernel must provide a mechanism for this.
+      
+* Ways to Communicate
+
+    - shared/common memory location where both can read/write. Need kernel help to establish a common memory.
+
+        + Two step process
+        + Step 1: Establish shared memory (By OS), communication convention. This is by the programmer (socket, serializer).
+        + Step 2: Communicate 
+
+    - *message* through communication agent (network + SW). 
+
+        + Requires the OS to provide an endpoint (port) descriptor.
+        + Can be used locally as well as to other computers
+        + OS will also have to establish a message *queue*
+
+    - Signals is an OS level communication convention. 
+
+        + Also called a software interrupt.
+        + Set of events
+        + Kernel will create a signal for each process on creation. This is used to communicate to the process.
+
+Coordination
+^^^^^^^^^^^^
+
+This is the purpose of communication. If the processes are not coordinated properly, (not an exhaustive list)
+
+* Can lead to inconsistency and race condition (un-predictable results)
+* *Deadlock*, when every process is waiting for some other, and no progress is made. everybody starves.
+* *Starvation*, when one process is in *deadlock*. Unfairness.
+* *Priority Inversion*, on the Mars Pathfinder project (1997). Priority scheduling and mutual exclusion problems solved seperately, but when combined, failed.
+
+This must be avoided. How?
+
+What we want:
+* Safety - bad things should not happen, required condition should not be violated, ie - no two processes are to write to the same location at the same time.
+* Liveness - Some good things must happen, the system must progress. At least one process should progress.
+* Fairness - 
 
 
+* Test and set code that executes atomically, so you can use flags 
+* Semaphore, is on top of atomic code. Uses P and V functions that run atomically. At OS level.
+* Monitors
+
+Popular Problems
+^^^^^^^^^^^^^^^^
+
+* Mutual Exclusion
+* Dining Philosopher problem
+* Reader-Writer problem
+* Producer -Consumer problem
+* Cigarette Smoker Problem
+* Sleeping barbers problem
 
 
 

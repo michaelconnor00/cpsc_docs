@@ -1,9 +1,11 @@
-================================
+********************************
 CPSC 475 Lecture and Study Notes
-================================
+********************************
+
 
 Oct 20, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^
+====================
+
 
 * Ch. 8 Working Together
     - Benevolent Agents
@@ -15,4 +17,9 @@ Oct 20, 2014 Lecture
 
 http://www.fipa.org/repository/aclspecs.html
 
+Oct 22, 2014 Lecture
+====================
 
+* slides
+* 
+* 

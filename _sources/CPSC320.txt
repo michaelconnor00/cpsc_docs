@@ -1,10 +1,25 @@
-================================
-CPSC 320 Lecture and Study Notes
-================================
+**
+h1
+**
 
+h2
+==
+
+h3
+--
+
+h4
+^^
+
+h5
+""
+
+********************************
+CPSC 320 Lecture and Study Notes
+********************************
 
 Oct 15, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^
+====================
 
 Project discussion:
 -------------------
@@ -24,7 +39,7 @@ Project discussion:
 
 
 Lecture:
----------
+--------
 
 Language Constructs
 
@@ -84,7 +99,7 @@ int x = 2+3;
 
 
 Oct 17th, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^^
+======================
 
 Control Structure
 ------------------
@@ -145,7 +160,7 @@ Parameter Passing
 
 
 Oct 22nd, 2014 Lecture
-^^^^^^^^^^^^^^^^^^^^^^^
+======================
 
 Talk about abstractions. It is probably the most important feature of programming languages. How is this supported in Programming languages?
 
