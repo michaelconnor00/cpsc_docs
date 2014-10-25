@@ -485,6 +485,111 @@ was introduced into L.
 </div>
 </div>
 </div>
+<div class="section" id="oct-24th-2014-lecture">
+<h2>Oct 24th, 2014 Lecture<a class="headerlink" href="#oct-24th-2014-lecture" title="Permalink to this headline">¶</a></h2>
+<p><strong>Memory Allocation models:</strong></p>
+<ul>
+<li><p class="first">Stack Frames for local variables and data, and heap space</p>
+</li>
+<li><p class="first">More simplistic, static allocation where the compiler handles the storage of every variable. This doesn&#8217;t work for recursion.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Need to be able to explain the purpose and need of the heap.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Stack Frame:</strong></p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div>F(x)</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</div></blockquote>
+<dl class="docutils">
+<dt>params        |              |</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</dd>
+<dt>dynamic link  |              | <em>admin</em> - also called control link</dt>
+<dd><blockquote class="first">
+<div><table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</div></blockquote>
+<dl class="last docutils">
+<dt>static link  |              | <em>admin</em> - also called access link</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</dd>
+<dt>return addr  |              | <em>admin</em></dt>
+<dd><blockquote class="first">
+<div><table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</div></blockquote>
+<dl class="last docutils">
+<dt>locals  |              |</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</dd>
+</dl>
+</dd>
+<dt>temporaries  |              |</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><em>Who creates What?:</em></p>
+<ul class="simple">
+<li>The calling procedure of F, will push the params, push links, push return address, and jump to F.</li>
+<li>Static link (access link), used to access non-local variables.</li>
+<li>Dynamic link (control link), points to the &#8220;parent&#8221; stack frames static link.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The links get complicated when
+functions are passed as a parameter. When a function is passed, it is encapsulated in an object called a
+closure. It includes a code pointer, and an environment pointer. A location of where the code is, and a point to the environment
+where it&#8217;s local variables are, also where the static link points to. This is not the case with C/C++ where a pointer is passed as the parameter. The enivronment pointer is .. note:: note
+is not required because the passed function can only use global variables, and thus doesn&#8217;t need to be told where they are.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This cannot accommodate returning a function as a result of a function. This is using closure,
+where the environment pointer will point to the environment that created it, but that environment is deleted on return.</p>
+</div>
+</div>
 </div>
 
 
@@ -514,6 +619,7 @@ was introduced into L.
 <li><a class="reference internal" href="#assignment">Assignment:</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#oct-24th-2014-lecture">Oct 24th, 2014 Lecture</a></li>
 </ul>
 </li>
 </ul>

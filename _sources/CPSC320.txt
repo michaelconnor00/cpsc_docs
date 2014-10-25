@@ -355,6 +355,50 @@ After A: ::
 .. warning:: Exam question: a = (b = c), Cleft, Cright are implementation. Cleft = (steps 1,2,3), Cright = (steps 2,1,3)
 
 
+Oct 24th, 2014 Lecture
+======================
+
+**Memory Allocation models:**
+
+* Stack Frames for local variables and data, and heap space
+* More simplistic, static allocation where the compiler handles the storage of every variable. This doesn't work for recursion.
+
+    - Need to be able to explain the purpose and need of the heap.
+
+**Stack Frame:**
+  
+                    F(x)
+                +--------------+
+  params        |              |
+                +--------------+
+  dynamic link  |              | *admin* - also called control link
+                +--------------+
+   static link  |              | *admin* - also called access link
+                +--------------+
+   return addr  |              | *admin*
+                +--------------+
+        locals  |              |
+                +--------------+
+   temporaries  |              |
+                +--------------+
+
+*Who creates What?:*
+
+
+* The calling procedure of F, will push the params, push links, push return address, and jump to F.
+* Static link (access link), used to access non-local variables.
+* Dynamic link (control link), points to the "parent" stack frames static link.
+
+.. note:: The links get complicated when 
+    functions are passed as a parameter. When a function is passed, it is encapsulated in an object called a 
+    closure. It includes a code pointer, and an environment pointer. A location of where the code is, and a point to the environment 
+    where it's local variables are, also where the static link points to. This is not the case with C/C++ where a pointer is passed as the parameter. The enivronment pointer is .. note:: note
+    is not required because the passed function can only use global variables, and thus doesn't need to be told where they are.
+    
+.. warning:: This cannot accommodate returning a function as a result of a function. This is using closure, 
+    where the environment pointer will point to the environment that created it, but that environment is deleted on return.
+
+
 
 
 

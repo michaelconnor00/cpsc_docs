@@ -1,25 +1,234 @@
 ********************************
-CPSC 475 Lecture and Study Notes
+CPSC 475 Study Notes
 ********************************
 
 
-Oct 20, 2014 Lecture
+Ch. 1 - Introduction
 ====================
 
+The Vision Thing
+----------------
 
-* Ch. 8 Working Together
-    - Benevolent Agents
-    - Self-interested Agents
-    - Coherence
-    - Coordination
-    - Contract Net
-    - 
 
-http://www.fipa.org/repository/aclspecs.html
+Some Views of the Field
+-----------------------
 
-Oct 22, 2014 Lecture
-====================
 
-* slides
-* 
-* 
+FAQs
+----
+
+
+Ch. 2 - Intelligent Agents
+==========================
+
+
+Agents and Objects
+------------------
+
+
+Agents and Expert Systems
+-------------------------
+
+
+Agents as Intentional Systems
+-----------------------------
+
+
+Abstract Architectures or intelligent Agents
+--------------------------------------------
+
+
+
+
+
+Ch. 3 - Deductive Reasoning Agents
+==================================
+
+Agents as Thereom Provers
+-------------------------
+
+Agent Orientated Programming
+----------------------------
+
+Concurrent MetateM
+------------------
+
+
+Ch. 4 - Practical Reasoning Agents
+==================================
+
+Practical Reasoning = Deliberation + Means–Ends Reasoning
+---------------------------------------------------------
+
+Means–Ends Reasoning
+--------------------
+
+Implementing a Practical Reasoning Agent
+----------------------------------------
+
+The Procedural Reasoning System
+-------------------------------
+
+
+
+Ch. 5 - Reactive and Hybrid Agents
+==================================
+
+5.1 Reactive Agents
+-------------------
+
+The subsumption architecture 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+PENGI
+^^^^^
+
+Situated Automata
+^^^^^^^^^^^^^^^^^
+
+The agent network architecture 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The limitations of reactive agents
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+5.2 Hybrid Agents
+-----------------
+
+TouringMachines
+^^^^^^^^^^^^^^^
+
+InteRRaP
+^^^^^^^^
+
+3T
+^^
+
+Stanley
+^^^^^^^
+
+
+
+
+Ch. 7 - Communicating
+=====================
+
+Speech Acts
+-----------
+
+Austin
+^^^^^^
+
+Searle
+^^^^^^
+
+The plan-based theory of speech acts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Speech acts as rational action
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Agent Communication Languages
+-----------------------------
+
+KQML
+^^^^
+
+The FIPA agent communication language
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+JADE 
+^^^^
+
+
+Ch. 8 - Working Together
+========================
+
+Cooperative Distributed Problem Solving 
+---------------------------------------
+
+Task Sharing and Result Sharing
+-------------------------------
+
+8.2.1  Task sharing in the Contract Net  . . . . . . . . . . . . . . . . . . . . . . 156
+
+Result Sharing
+--------------
+
+Combining Task and Result Sharing
+---------------------------------
+
+Handling Inconsistency
+----------------------
+
+Coordination
+------------
+
+Coordination through partial global planning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Coordination through joint intentions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Coordination by mutual modelling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Coordination by norms and social laws
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Multiagent Planning and Synchronization 
+---------------------------------------
+
+
+Ch. 11 - Mulitagent Interactions
+================================
+
+Utilities and Preferences
+-------------------------
+
+
+Setting the Scene
+-----------------
+
+
+Solution Concepts and Solution Properties
+-----------------------------------------
+
+Dominant strategies
+^^^^^^^^^^^^^^^^^^^
+
+Nash equilibria
+^^^^^^^^^^^^^^^
+
+Pareto efﬁciency
+^^^^^^^^^^^^^^^^
+
+Maximizing social welfare
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Competitive and Zero-Sum Interactions
+-------------------------------------
+
+
+The Prisoner’s Dilemma
+----------------------
+
+The shadow of the future
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Program equilibria
+^^^^^^^^^^^^^^^^^^
+
+Other Symmetric 2 × 2 Interactions
+----------------------------------
+
+Representing Multiagent Scenarios
+---------------------------------
+
+Dependence Relations in Multiagent Systems 
+------------------------------------------
+
+
+
