@@ -6,229 +6,344 @@ CPSC 475 Study Notes
 Ch. 1 - Introduction
 ====================
 
-The Vision Thing
-----------------
+Intro Concepts
+^^^^^^^^^^^^^^
+
+Important and Continuing trends in computing:
+---------------------------------------------
+
+* Ubiquity
+
+    - Continual reduction in cost of computing makes it possible to introduce processing power into places and devices that would have once been uneconomic.
+    - As processing capability spreads, sophistication (and intelligence of a sort) becomes ubiquitous.
+
+* Interconnection
+
+    - Computer systems no longer stand alone, but are networked into large distributed systems.
+    - Since distributed and concurrent systems have become the norm, some researchers are putting forward theoretical models that portray computing as primarily a process of interaction
+
+* Intelligence
+
+    - The complexity of tasks that we are capable of automating and delegating to computers has grown steadily
+
+* Delegation
+
+      - Computers are doing more for us ... without our intervention.
+      - We are giving control to computers, even in safety critical tasks.
+
+* Human-Orientation
+
+    - The movement away from machine-oriented views of programming toward concepts and metaphors that more closely reflect the way we ourselves understand the world
+
+Programming Progression:
+------------------------
+
+* machine code
+* assembly code
+* machine-independent languages
+* sub-routines
+* procedures & functions
+* abstract data types
+* objects
+* agents...
+
+Agents: A First Definition
+--------------------------
+
+An agent is a computer system that is capable of independent (autonomous) action on behalf of its user or owner 
+(figuring out what needs to be done to satisfy design objectives, rather than constantly being told).
+
+Multiagent Systems: A First Definition
+--------------------------------------
+
+A multiagent system is one that consists of a number of agents, which interact with one-another.
+In the most general case, agents will be acting on behalf of users with different goals and motivations. To 
+successfully interact, they will require the ability to cooperate, coordinate, and negotiate with each other, 
+much as people do.
+
+The Micro and Macro Problems
+----------------------------
+
+* **Micro - Agent Design:** How do we build agents that are capable of independent, autonomous action in order to successfully carry out the tasks that we delegate to them?
+* **Macro - Society Design:** How do we build agents that are capable of interacting (cooperating, coordinating, negotiating) with other agents in order to successfully carry out the tasks that we delegate to them, particularly when the other agents cannot be assumed to share the same interests/goals?
+
+Why MAS?
+^^^^^^^^
+
+* Agents for software engineering  
+
+    - The Grid
+    - Ubiquitous Computing
+    - The Semantic Web
+
+* Agents for understanding human societies
+* Agents for distributed economic systems
 
 
-Some Views of the Field
------------------------
+The Grid
+""""""""
+The Grid aims to develop massive-scale open distributed systems, capable of being able to effectively and automatically 
+deploy and redeploy computational (and other) resources to solve large computational problems. The grid and MAS are both 
+pursuing this, however from different perspectives.
+
+Ubiquitous computing
+""""""""""""""""""""
+Populations of computing entities – hardware and software - will become an effective part of our environment, 
+performing tasks that support our broad purposes without our continual direction, thus allowing us to be largely 
+unaware of them.
+
+The Semantic Web
+""""""""""""""""
+The semantic web aims to annotate web sites with semantic markup: information in a form processable by computer, 
+typically relating to the content of the web site. The idea is that this markup will enable browsers (etc) provide 
+richer, more meaningful services to users.
 
 
-FAQs
-----
 
+
+FAQs - Objections
+^^^^^^^^^^^^^^^^^
+**Isn't it just distributed systems?** -> Distributed systems don't take account of preferences.
+
+**Isn't it just AI?** -> AI traditionally focused on agent capabilities.
+
+**Isn't it just economics?** -> Economic solutions take no account of computation. A new type of economic system.
+
+**Isn't it all just social sciences?** -> We focus on computational agents.
+
+
+
+.. -----------------------------------------------------
 
 Ch. 2 - Intelligent Agents
 ==========================
 
 
 Agents and Objects
-------------------
+^^^^^^^^^^^^^^^^^^
 
 
 Agents and Expert Systems
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Agents as Intentional Systems
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Abstract Architectures or intelligent Agents
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
 
+.. -----------------------------------------------------
 
 Ch. 3 - Deductive Reasoning Agents
 ==================================
 
 Agents as Thereom Provers
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Agent Orientated Programming
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Concurrent MetateM
-------------------
+^^^^^^^^^^^^^^^^^^
 
+
+.. -----------------------------------------------------
 
 Ch. 4 - Practical Reasoning Agents
 ==================================
 
 Practical Reasoning = Deliberation + Means–Ends Reasoning
----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Means–Ends Reasoning
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Implementing a Practical Reasoning Agent
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Procedural Reasoning System
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
+.. -----------------------------------------------------
 
 Ch. 5 - Reactive and Hybrid Agents
 ==================================
 
 5.1 Reactive Agents
--------------------
+^^^^^^^^^^^^^^^^^^^
 
-The subsumption architecture 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The subsumption architecture
+----------------------------
 
 PENGI
-^^^^^
+-----
 
 Situated Automata
-^^^^^^^^^^^^^^^^^
+-----------------
 
-The agent network architecture 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The agent network architecture
+------------------------------
 
 The limitations of reactive agents
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 
 5.2 Hybrid Agents
------------------
+^^^^^^^^^^^^^^^^^
 
 TouringMachines
-^^^^^^^^^^^^^^^
+---------------
 
 InteRRaP
-^^^^^^^^
+--------
 
 3T
-^^
+--
 
 Stanley
-^^^^^^^
+-------
 
 
 
+.. -----------------------------------------------------
 
 Ch. 7 - Communicating
 =====================
 
 Speech Acts
------------
+^^^^^^^^^^^
 
 Austin
-^^^^^^
+------
 
 Searle
-^^^^^^
+------
 
 The plan-based theory of speech acts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 Speech acts as rational action
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+------------------------------
+    
 
 Agent Communication Languages
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 KQML
-^^^^
+----
 
 The FIPA agent communication language
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 
 JADE 
-^^^^
+----
 
+.. -----------------------------------------------------
 
 Ch. 8 - Working Together
 ========================
 
-Cooperative Distributed Problem Solving 
----------------------------------------
+Cooperative Distributed Problem Solving
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Task Sharing and Result Sharing
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-8.2.1  Task sharing in the Contract Net  . . . . . . . . . . . . . . . . . . . . . . 156
+Task sharing in the Contract Net
+--------------------------------
 
 Result Sharing
---------------
+^^^^^^^^^^^^^^
 
 Combining Task and Result Sharing
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Handling Inconsistency
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 Coordination
-------------
+^^^^^^^^^^^^
 
 Coordination through partial global planning
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 Coordination through joint intentions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 
 Coordination by mutual modelling
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 Coordination by norms and social laws
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 
-Multiagent Planning and Synchronization 
----------------------------------------
+Multiagent Planning and Synchronization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
+.. -----------------------------------------------------
 
 Ch. 11 - Mulitagent Interactions
 ================================
 
 Utilities and Preferences
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Setting the Scene
------------------
+^^^^^^^^^^^^^^^^^
 
 
 Solution Concepts and Solution Properties
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dominant strategies
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 Nash equilibria
-^^^^^^^^^^^^^^^
+---------------
 
 Pareto efﬁciency
-^^^^^^^^^^^^^^^^
+----------------
 
 Maximizing social welfare
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 Competitive and Zero-Sum Interactions
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 The Prisoner’s Dilemma
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 The shadow of the future
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Program equilibria
-^^^^^^^^^^^^^^^^^^
+------------------
 
 Other Symmetric 2 × 2 Interactions
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Representing Multiagent Scenarios
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Dependence Relations in Multiagent Systems 
-------------------------------------------
+Dependence Relations in Multiagent Systems
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+
+
+
 
 
 

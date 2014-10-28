@@ -49,14 +49,117 @@
 <h1>CPSC 475 Study Notes<a class="headerlink" href="#cpsc-475-study-notes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ch-1-introduction">
 <h2>Ch. 1 - Introduction<a class="headerlink" href="#ch-1-introduction" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-vision-thing">
-<h3>The Vision Thing<a class="headerlink" href="#the-vision-thing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="intro-concepts">
+<h3>Intro Concepts<a class="headerlink" href="#intro-concepts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="important-and-continuing-trends-in-computing">
+<h4>Important and Continuing trends in computing:<a class="headerlink" href="#important-and-continuing-trends-in-computing" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Ubiquity</p>
+<blockquote>
+<div><ul class="simple">
+<li>Continual reduction in cost of computing makes it possible to introduce processing power into places and devices that would have once been uneconomic.</li>
+<li>As processing capability spreads, sophistication (and intelligence of a sort) becomes ubiquitous.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Interconnection</p>
+<blockquote>
+<div><ul class="simple">
+<li>Computer systems no longer stand alone, but are networked into large distributed systems.</li>
+<li>Since distributed and concurrent systems have become the norm, some researchers are putting forward theoretical models that portray computing as primarily a process of interaction</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Intelligence</p>
+<blockquote>
+<div><ul class="simple">
+<li>The complexity of tasks that we are capable of automating and delegating to computers has grown steadily</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Delegation</p>
+<blockquote>
+<div><ul class="simple">
+<li>Computers are doing more for us ... without our intervention.</li>
+<li>We are giving control to computers, even in safety critical tasks.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Human-Orientation</p>
+<blockquote>
+<div><ul class="simple">
+<li>The movement away from machine-oriented views of programming toward concepts and metaphors that more closely reflect the way we ourselves understand the world</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
 </div>
-<div class="section" id="some-views-of-the-field">
-<h3>Some Views of the Field<a class="headerlink" href="#some-views-of-the-field" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="programming-progression">
+<h4>Programming Progression:<a class="headerlink" href="#programming-progression" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>machine code</li>
+<li>assembly code</li>
+<li>machine-independent languages</li>
+<li>sub-routines</li>
+<li>procedures &amp; functions</li>
+<li>abstract data types</li>
+<li>objects</li>
+<li>agents...</li>
+</ul>
 </div>
-<div class="section" id="faqs">
-<h3>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="agents-a-first-definition">
+<h4>Agents: A First Definition<a class="headerlink" href="#agents-a-first-definition" title="Permalink to this headline">¶</a></h4>
+<p>An agent is a computer system that is capable of independent (autonomous) action on behalf of its user or owner
+(figuring out what needs to be done to satisfy design objectives, rather than constantly being told).</p>
+</div>
+<div class="section" id="multiagent-systems-a-first-definition">
+<h4>Multiagent Systems: A First Definition<a class="headerlink" href="#multiagent-systems-a-first-definition" title="Permalink to this headline">¶</a></h4>
+<p>A multiagent system is one that consists of a number of agents, which interact with one-another.
+In the most general case, agents will be acting on behalf of users with different goals and motivations. To
+successfully interact, they will require the ability to cooperate, coordinate, and negotiate with each other,
+much as people do.</p>
+</div>
+<div class="section" id="the-micro-and-macro-problems">
+<h4>The Micro and Macro Problems<a class="headerlink" href="#the-micro-and-macro-problems" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>Micro - Agent Design:</strong> How do we build agents that are capable of independent, autonomous action in order to successfully carry out the tasks that we delegate to them?</li>
+<li><strong>Macro - Society Design:</strong> How do we build agents that are capable of interacting (cooperating, coordinating, negotiating) with other agents in order to successfully carry out the tasks that we delegate to them, particularly when the other agents cannot be assumed to share the same interests/goals?</li>
+</ul>
+</div>
+</div>
+<div class="section" id="why-mas">
+<h3>Why MAS?<a class="headerlink" href="#why-mas" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Agents for software engineering</p>
+<blockquote>
+<div><ul class="simple">
+<li>The Grid</li>
+<li>Ubiquitous Computing</li>
+<li>The Semantic Web</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Agents for understanding human societies</p>
+</li>
+<li><p class="first">Agents for distributed economic systems</p>
+</li>
+</ul>
+<p>The Grid aims to develop massive-scale open distributed systems, capable of being able to effectively and automatically
+deploy and redeploy computational (and other) resources to solve large computational problems. The grid and MAS are both
+pursuing this, however from different perspectives.</p>
+<p>Populations of computing entities – hardware and software - will become an effective part of our environment,
+performing tasks that support our broad purposes without our continual direction, thus allowing us to be largely
+unaware of them.</p>
+<p>The semantic web aims to annotate web sites with semantic markup: information in a form processable by computer,
+typically relating to the content of the web site. The idea is that this markup will enable browsers (etc) provide
+richer, more meaningful services to users.</p>
+</div>
+<div class="section" id="faqs-objections">
+<h3>FAQs - Objections<a class="headerlink" href="#faqs-objections" title="Permalink to this headline">¶</a></h3>
+<p><strong>Isn&#8217;t it just distributed systems?</strong> -&gt; Distributed systems don&#8217;t take account of preferences.</p>
+<p><strong>Isn&#8217;t it just AI?</strong> -&gt; AI traditionally focused on agent capabilities.</p>
+<p><strong>Isn&#8217;t it just economics?</strong> -&gt; Economic solutions take no account of computation. A new type of economic system.</p>
+<p><strong>Isn&#8217;t it all just social sciences?</strong> -&gt; We focus on computational agents.</p>
 </div>
 </div>
 <div class="section" id="ch-2-intelligent-agents">
@@ -174,7 +277,9 @@
 </div>
 <div class="section" id="task-sharing-and-result-sharing">
 <h3>Task Sharing and Result Sharing<a class="headerlink" href="#task-sharing-and-result-sharing" title="Permalink to this headline">¶</a></h3>
-<p>8.2.1  Task sharing in the Contract Net  . . . . . . . . . . . . . . . . . . . . . . 156</p>
+<div class="section" id="task-sharing-in-the-contract-net">
+<h4>Task sharing in the Contract Net<a class="headerlink" href="#task-sharing-in-the-contract-net" title="Permalink to this headline">¶</a></h4>
+</div>
 </div>
 <div class="section" id="result-sharing">
 <h3>Result Sharing<a class="headerlink" href="#result-sharing" title="Permalink to this headline">¶</a></h3>
@@ -261,9 +366,16 @@
   <ul>
 <li><a class="reference internal" href="#">CPSC 475 Study Notes</a><ul>
 <li><a class="reference internal" href="#ch-1-introduction">Ch. 1 - Introduction</a><ul>
-<li><a class="reference internal" href="#the-vision-thing">The Vision Thing</a></li>
-<li><a class="reference internal" href="#some-views-of-the-field">Some Views of the Field</a></li>
-<li><a class="reference internal" href="#faqs">FAQs</a></li>
+<li><a class="reference internal" href="#intro-concepts">Intro Concepts</a><ul>
+<li><a class="reference internal" href="#important-and-continuing-trends-in-computing">Important and Continuing trends in computing:</a></li>
+<li><a class="reference internal" href="#programming-progression">Programming Progression:</a></li>
+<li><a class="reference internal" href="#agents-a-first-definition">Agents: A First Definition</a></li>
+<li><a class="reference internal" href="#multiagent-systems-a-first-definition">Multiagent Systems: A First Definition</a></li>
+<li><a class="reference internal" href="#the-micro-and-macro-problems">The Micro and Macro Problems</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#why-mas">Why MAS?</a></li>
+<li><a class="reference internal" href="#faqs-objections">FAQs - Objections</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ch-2-intelligent-agents">Ch. 2 - Intelligent Agents</a><ul>
@@ -322,7 +434,10 @@
 </li>
 <li><a class="reference internal" href="#ch-8-working-together">Ch. 8 - Working Together</a><ul>
 <li><a class="reference internal" href="#cooperative-distributed-problem-solving">Cooperative Distributed Problem Solving</a></li>
-<li><a class="reference internal" href="#task-sharing-and-result-sharing">Task Sharing and Result Sharing</a></li>
+<li><a class="reference internal" href="#task-sharing-and-result-sharing">Task Sharing and Result Sharing</a><ul>
+<li><a class="reference internal" href="#task-sharing-in-the-contract-net">Task sharing in the Contract Net</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#result-sharing">Result Sharing</a></li>
 <li><a class="reference internal" href="#combining-task-and-result-sharing">Combining Task and Result Sharing</a></li>
 <li><a class="reference internal" href="#handling-inconsistency">Handling Inconsistency</a></li>
