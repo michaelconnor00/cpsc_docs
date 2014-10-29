@@ -144,15 +144,24 @@ much as people do.</p>
 <li><p class="first">Agents for distributed economic systems</p>
 </li>
 </ul>
+<div class="section" id="the-grid">
+<h4>The Grid<a class="headerlink" href="#the-grid" title="Permalink to this headline">¶</a></h4>
 <p>The Grid aims to develop massive-scale open distributed systems, capable of being able to effectively and automatically
 deploy and redeploy computational (and other) resources to solve large computational problems. The grid and MAS are both
 pursuing this, however from different perspectives.</p>
+</div>
+<div class="section" id="ubiquitous-computing">
+<h4>Ubiquitous computing<a class="headerlink" href="#ubiquitous-computing" title="Permalink to this headline">¶</a></h4>
 <p>Populations of computing entities – hardware and software - will become an effective part of our environment,
 performing tasks that support our broad purposes without our continual direction, thus allowing us to be largely
 unaware of them.</p>
+</div>
+<div class="section" id="the-semantic-web">
+<h4>The Semantic Web<a class="headerlink" href="#the-semantic-web" title="Permalink to this headline">¶</a></h4>
 <p>The semantic web aims to annotate web sites with semantic markup: information in a form processable by computer,
 typically relating to the content of the web site. The idea is that this markup will enable browsers (etc) provide
 richer, more meaningful services to users.</p>
+</div>
 </div>
 <div class="section" id="faqs-objections">
 <h3>FAQs - Objections<a class="headerlink" href="#faqs-objections" title="Permalink to this headline">¶</a></h3>
@@ -164,14 +173,85 @@ richer, more meaningful services to users.</p>
 </div>
 <div class="section" id="ch-2-intelligent-agents">
 <h2>Ch. 2 - Intelligent Agents<a class="headerlink" href="#ch-2-intelligent-agents" title="Permalink to this headline">¶</a></h2>
+<p><strong>Agent:</strong> an agent is a computer system capable of autonomous action in some environment, in order to achieve its delegated goals.</p>
+<p>Intelligent Agents:
+* reactive
+* pro-active
+* social</p>
+<p><strong>Reactivity:</strong> environment is fixed (not like real world), maintains an ongoing interaction with the environment, and responds to changes.
+<strong>Proactiveness:</strong> goal directed behaviour, generating and attempting to achieve goals, not soley driven by events, taking initiative, recognizing opportunities.
+<strong>Social Ability:</strong> cannot attempt to achieve goals without taking others into account, some goals can only be achieved by interacting with others.</p>
+<p>Social Ability Interactions:
+* Cooperation: working together as a team to achieve a shared goal. Often prompted either by the fact that no one agent can achieve the goal alone, or that cooperation will obtain a better result.
+* Coordination: managing the interdependencies between activities. ie - between a shared resource.
+* Negotiation: the ability to reach agreements on matters of common interest. Typically involves offer and counter-offer, with compromises made by participants.</p>
+<p>Some other properties:
+* mobility
+* veracity
+* benevolence
+* rationality
+* learning/adaption</p>
 <div class="section" id="agents-and-objects">
 <h3>Agents and Objects<a class="headerlink" href="#agents-and-objects" title="Permalink to this headline">¶</a></h3>
+<p><strong>Objects</strong>
+* encapsulate some state
+* communicates via message passing
+* has methods that may operate on this state</p>
+<p><strong>Agents</strong>
+* Autonomous: more so than objects. In particular, they decide when to perform an action on request from another agent.
+* Smart: capable of flexible behaviour.
+* Active: not passive service providers</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Objects do it for free...</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Agents do it for money, and because they want to.</p>
+</div>
 </div>
 <div class="section" id="agents-and-expert-systems">
 <h3>Agents and Expert Systems<a class="headerlink" href="#agents-and-expert-systems" title="Permalink to this headline">¶</a></h3>
+<p><em>Expert systems</em> typically disembodied &#8216;expertise&#8217; about some (abstract) domain of discourse. ie - MYCIN knows about blood diseases in humans. It has a wealth of knowledge about blood diseases, in form of rules.</p>
+<dl class="docutils">
+<dt><strong>Diff between Agents and Expert Systems</strong></dt>
+<dd><ol class="first arabic simple">
+<li>Agents are situated in an environment: MYCIN is not aware of the world, only information obtained is by asking the user questions.</li>
+<li>Agents act: MYCIN does not operate on patients</li>
+</ol>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some real-time expert systems are agents</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="intelligent-agents-and-ai">
+<h3>Intelligent Agents and AI<a class="headerlink" href="#intelligent-agents-and-ai" title="Permalink to this headline">¶</a></h3>
+<p>AI aims to build systems that can understand natural language, recognise and understand scenes, use common sense, think creatively, etc.
+Agents aim to be simple systems that can choose the right action to preform, typically in a limited domain.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">NETBOT experience: We made our agents dumber and dumber, until finally they made money.</p>
+</div>
+</div>
+<div class="section" id="properties-of-environments">
+<h3>Properties of environments<a class="headerlink" href="#properties-of-environments" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Accessible vs Inaccessible: the agent can access (it&#8217;s own environment), and cannot access (physical world).</li>
+<li>Deterministic vs Non-Deterministic: Deterministic, any action has a single guaranteed effect. The physical world is non-deterministic.</li>
+<li>Episodic vs Non-Episodic: the performance of an agent is dependent on a number of discrete unlinked episodes. Easier for design because there is not need to focus on future episodes.</li>
+<li>Static vs Dynamic: static enviro stays unchanged (by agent), dynamic enviro is one that has other processes operating on it, hence changes (not by agent).</li>
+<li>Discrete vs Continuous: discrete has a fixed finite number of actions and percepts (chess). Taxi driving is an example of a continuous enviro.</li>
+</ul>
 </div>
 <div class="section" id="agents-as-intentional-systems">
 <h3>Agents as Intentional Systems<a class="headerlink" href="#agents-as-intentional-systems" title="Permalink to this headline">¶</a></h3>
+<p><strong>Folk Psychology</strong>
+These statements make use of a folk psychology, by which human behaviour is predicted and explained by attributing attitudes such as believing, wanting, hoping, fearing,...</p>
+<p><strong>Daniel Dennett on Intentional Systems:</strong>
+* A first-order intentional system has beliefs and desires but no beliefs and desires <em>about</em> beliefs and desires.
+* A second-order intentional system is more sophisticated; it has beliefs and desires (and no doubt other intentional states) about beliefs and desires, both those of others and its own.</p>
 </div>
 <div class="section" id="abstract-architectures-or-intelligent-agents">
 <h3>Abstract Architectures or intelligent Agents<a class="headerlink" href="#abstract-architectures-or-intelligent-agents" title="Permalink to this headline">¶</a></h3>
@@ -374,13 +454,20 @@ richer, more meaningful services to users.</p>
 <li><a class="reference internal" href="#the-micro-and-macro-problems">The Micro and Macro Problems</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#why-mas">Why MAS?</a></li>
+<li><a class="reference internal" href="#why-mas">Why MAS?</a><ul>
+<li><a class="reference internal" href="#the-grid">The Grid</a></li>
+<li><a class="reference internal" href="#ubiquitous-computing">Ubiquitous computing</a></li>
+<li><a class="reference internal" href="#the-semantic-web">The Semantic Web</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#faqs-objections">FAQs - Objections</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ch-2-intelligent-agents">Ch. 2 - Intelligent Agents</a><ul>
 <li><a class="reference internal" href="#agents-and-objects">Agents and Objects</a></li>
 <li><a class="reference internal" href="#agents-and-expert-systems">Agents and Expert Systems</a></li>
+<li><a class="reference internal" href="#intelligent-agents-and-ai">Intelligent Agents and AI</a></li>
+<li><a class="reference internal" href="#properties-of-environments">Properties of environments</a></li>
 <li><a class="reference internal" href="#agents-as-intentional-systems">Agents as Intentional Systems</a></li>
 <li><a class="reference internal" href="#abstract-architectures-or-intelligent-agents">Abstract Architectures or intelligent Agents</a></li>
 </ul>

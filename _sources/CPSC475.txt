@@ -81,19 +81,19 @@ Why MAS?
 
 
 The Grid
-""""""""
+--------
 The Grid aims to develop massive-scale open distributed systems, capable of being able to effectively and automatically 
 deploy and redeploy computational (and other) resources to solve large computational problems. The grid and MAS are both 
 pursuing this, however from different perspectives.
 
 Ubiquitous computing
-""""""""""""""""""""
+--------------------
 Populations of computing entities – hardware and software - will become an effective part of our environment, 
 performing tasks that support our broad purposes without our continual direction, thus allowing us to be largely 
 unaware of them.
 
 The Semantic Web
-""""""""""""""""
+----------------
 The semantic web aims to annotate web sites with semantic markup: information in a form processable by computer, 
 typically relating to the content of the web site. The idea is that this markup will enable browsers (etc) provide 
 richer, more meaningful services to users.
@@ -118,17 +118,85 @@ FAQs - Objections
 Ch. 2 - Intelligent Agents
 ==========================
 
+**Agent:** an agent is a computer system capable of autonomous action in some environment, in order to achieve its delegated goals.
+
+Intelligent Agents:
+* reactive
+* pro-active
+* social
+
+**Reactivity:** environment is fixed (not like real world), maintains an ongoing interaction with the environment, and responds to changes.
+**Proactiveness:** goal directed behaviour, generating and attempting to achieve goals, not soley driven by events, taking initiative, recognizing opportunities.
+**Social Ability:** cannot attempt to achieve goals without taking others into account, some goals can only be achieved by interacting with others.
+
+Social Ability Interactions:
+* Cooperation: working together as a team to achieve a shared goal. Often prompted either by the fact that no one agent can achieve the goal alone, or that cooperation will obtain a better result.
+* Coordination: managing the interdependencies between activities. ie - between a shared resource.
+* Negotiation: the ability to reach agreements on matters of common interest. Typically involves offer and counter-offer, with compromises made by participants.
+
+Some other properties:
+* mobility
+* veracity
+* benevolence
+* rationality
+* learning/adaption
+
+
 
 Agents and Objects
 ^^^^^^^^^^^^^^^^^^
+**Objects**
+* encapsulate some state
+* communicates via message passing
+* has methods that may operate on this state
+
+**Agents**
+* Autonomous: more so than objects. In particular, they decide when to perform an action on request from another agent.
+* Smart: capable of flexible behaviour. 
+* Active: not passive service providers
+
+
+.. note:: Objects do it for free...
+
+.. note:: Agents do it for money, and because they want to.
 
 
 Agents and Expert Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*Expert systems* typically disembodied 'expertise' about some (abstract) domain of discourse. ie - MYCIN knows about blood diseases in humans. It has a wealth of knowledge about blood diseases, in form of rules.
+
+**Diff between Agents and Expert Systems** 
+ 1. Agents are situated in an environment: MYCIN is not aware of the world, only information obtained is by asking the user questions.
+ 2. Agents act: MYCIN does not operate on patients
+ 
+ .. note:: Some real-time expert systems are agents
+
+Intelligent Agents and AI
+^^^^^^^^^^^^^^^^^^^^^^^^^
+AI aims to build systems that can understand natural language, recognise and understand scenes, use common sense, think creatively, etc.
+Agents aim to be simple systems that can choose the right action to preform, typically in a limited domain.
+
+.. note:: NETBOT experience: We made our agents dumber and dumber, until finally they made money.
+
+Properties of environments
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Accessible vs Inaccessible: the agent can access (it's own environment), and cannot access (physical world).
+* Deterministic vs Non-Deterministic: Deterministic, any action has a single guaranteed effect. The physical world is non-deterministic.
+* Episodic vs Non-Episodic: the performance of an agent is dependent on a number of discrete unlinked episodes. Easier for design because there is not need to focus on future episodes.
+* Static vs Dynamic: static enviro stays unchanged (by agent), dynamic enviro is one that has other processes operating on it, hence changes (not by agent).
+* Discrete vs Continuous: discrete has a fixed finite number of actions and percepts (chess). Taxi driving is an example of a continuous enviro.
+
 
 Agents as Intentional Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Folk Psychology** 
+These statements make use of a folk psychology, by which human behaviour is predicted and explained by attributing attitudes such as believing, wanting, hoping, fearing,...
+
+**Daniel Dennett on Intentional Systems:**
+* A first-order intentional system has beliefs and desires but no beliefs and desires *about* beliefs and desires.
+* A second-order intentional system is more sophisticated; it has beliefs and desires (and no doubt other intentional states) about beliefs and desires, both those of others and its own.
+
 
 
 Abstract Architectures or intelligent Agents
